@@ -37,7 +37,7 @@
     --safe-strong:#1F5C42;
     --safe-tint:#E3F1EA;
     --shadow: 0 1px 2px rgba(26,26,26,0.04), 0 20px 40px -24px rgba(26,26,26,0.18);
-    --radius-card:16px;
+    --radius-card:20px;
     --font-display:'Archivo', -apple-system, 'Segoe UI', sans-serif;
     --font-body:'Archivo', -apple-system, 'Segoe UI', sans-serif;
     --font-mono:'IBM Plex Mono', 'Courier New', monospace;
@@ -130,16 +130,24 @@
   .anchor-target{scroll-margin-top:118px;}
 
   /* ---------- generic building blocks ---------- */
-  .section{padding-block:36px;border-top:1px solid var(--line-soft);}
+  .section{padding-block:52px;border-top:1px solid var(--line-soft);}
   .section:first-child{border-top:none;padding-top:0;}
-  .section-head{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;max-width:65ch;}
+  .section-head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;max-width:65ch;}
   .eyebrow{
     font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;
     color:var(--primary-strong);font-weight:600;
   }
-  .section-head h2{font-size:1.7rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.1rem);}
   .section-head p{color:var(--ink-soft);font-size:0.98rem;max-width:60ch;}
   .lede{font-size:1.15rem;color:var(--ink-soft);max-width:68ch;font-weight:500;}
+
+  /* hero de apertura (Tab Programa) */
+  .hero-block{padding-bottom:0;}
+  .hero-block .eyebrow{margin-bottom:2px;}
+  .hero-block h1{
+    font-size:clamp(2.1rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.03em;
+    line-height:1.04;max-width:16ch;margin:10px 0 16px;
+  }
 
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .chip{
@@ -149,12 +157,12 @@
   }
   .chip b{color:var(--ink);font-weight:600;}
 
-  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--line-soft);}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px;margin-top:36px;padding-top:32px;padding-bottom:8px;border-top:1px solid var(--line-soft);}
   @media (max-width:640px){ .stat-row{grid-template-columns:repeat(2,1fr);} }
-  .stat-row .num{font-family:var(--font-display);font-weight:800;font-size:2rem;letter-spacing:-0.02em;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums;}
-  .stat-row .cap{margin-top:6px;font-size:0.82rem;color:var(--ink-soft);}
+  .stat-row .num{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;color:var(--primary);line-height:1;font-variant-numeric:tabular-nums;}
+  .stat-row .cap{margin-top:8px;font-size:0.85rem;color:var(--ink-soft);}
 
-  .grid{display:grid;gap:16px;}
+  .grid{display:grid;gap:18px;}
   .grid-2{grid-template-columns:repeat(2,1fr);}
   .grid-4{grid-template-columns:repeat(4,1fr);}
   @media (max-width:820px){ .grid-4{grid-template-columns:repeat(2,1fr);} }
@@ -162,8 +170,8 @@
 
   .card{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
-    padding:18px;box-shadow:var(--shadow);
-    display:flex;flex-direction:column;gap:8px;
+    padding:22px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:10px;
     transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, border-color .18s ease;
   }
   .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--primary) 30%, var(--line));box-shadow:0 2px 4px rgba(26,26,26,0.05), 0 18px 32px -16px rgba(26,26,26,0.16);}
@@ -318,7 +326,7 @@
   }
 
   .pending-card{
-    border:1px dashed var(--line);border-radius:var(--radius-card);padding:16px 18px;
+    border:1px dashed var(--line);border-radius:var(--radius-card);padding:20px 22px;
     background:var(--surface-2);display:flex;flex-direction:column;gap:6px;
     transition:transform .18s cubic-bezier(.16,1,.3,1), border-color .18s ease;
   }
@@ -329,9 +337,9 @@
 
   .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   @media (max-width:640px){ .tier-row{grid-template-columns:1fr;} }
-  .tier-card{border-radius:var(--radius-card);padding:18px;border:1px solid var(--line);background:var(--surface);transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease;}
+  .tier-card{border-radius:var(--radius-card);padding:22px;border:1px solid var(--line);background:var(--surface);transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease;}
   .tier-card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(26,26,26,0.05), 0 18px 32px -16px rgba(26,26,26,0.16);}
-  .tier-card .range{font-family:var(--font-mono);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;}
+  .tier-card .range{font-family:var(--font-display);font-size:1.9rem;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;}
   .tier-card .lvl{font-size:0.85rem;color:var(--ink-soft);margin-top:4px;}
   .tier-card.t1{border-top:3px solid var(--ink-faint);}
   .tier-card.t2{border-top:3px solid var(--accent);}
@@ -380,8 +388,10 @@
 <!-- ================= TAB 1: PROGRAMA ================= -->
 <section class="tab-panel" id="panel-programa" role="tabpanel">
 
-  <div class="section">
-    <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero de un uso básico de IA generativa a un uso intermedio, aplicado y responsable en sus funciones cotidianas.</p>
+  <div class="section hero-block">
+    <span class="eyebrow">Guía del facilitador</span>
+    <h1>De uso básico a uso responsable de IA generativa</h1>
+    <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero a un uso intermedio, aplicado y responsable de IA en sus funciones cotidianas.</p>
     <div class="chip-row">
       <span class="chip">1 facilitador + 1 asistente técnico</span>
       <span class="chip">4 ejes de competencia</span>
