@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Guia del facilitador del programa de capacitacion en IA de SEJUVE Guerrero: marco del programa, cronograma con cartas descriptivas, y evaluacion y normativa de datos de ninez." />
+<meta name="description" content="Programa de Capacitación Institucional en Inteligencia Artificial Aplicada de la Secretaría de la Juventud y la Niñez del Estado de Guerrero (SEJUVE): ficha técnica, mapa curricular de 3 módulos y 12 sesiones, y protocolo de gobernanza, presupuesto y continuidad." />
 <link rel="icon" href="data:,">
-<title>Ruta IA SEJUVE</title>
+<title>Programa IA SEJUVE</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
@@ -15,48 +15,49 @@
      Tipografia oficial "Gibson" / "Patria" no distribuida como webfont
      publica; Sora + Inter se usan como sustituto de uso libre. */
   :root{
-    --paper:#FAF8F9;
+    --paper:#F1EEE3;
     --surface:#FFFFFF;
-    --surface-2:#F3EDF0;
-    --ink:#201317;
-    --ink-soft:#6D5F65;
-    --ink-faint:#9C8D93;
-    --line:rgba(32,19,23,0.12);
-    --line-soft:rgba(32,19,23,0.07);
-    --primary:#4A001F;
-    --primary-strong:#6B0430;
-    --primary-bright:#A02F58;
-    --primary-glow:rgba(122,18,63,0.35);
-    --primary-tint:rgba(74,0,31,0.06);
-    --primary-tint-strong:rgba(74,0,31,0.12);
+    --surface-2:#E9E4D4;
+    --ink:#1E2016;
+    --ink-soft:#5C5F4E;
+    --ink-faint:#8C8E7A;
+    --line:rgba(30,32,22,0.12);
+    --line-soft:rgba(30,32,22,0.07);
+    --primary:#48583A;
+    --primary-strong:#39472E;
+    --primary-bright:#748A54;
+    --primary-glow:rgba(72,88,58,0.32);
+    --primary-tint:rgba(72,88,58,0.07);
+    --primary-tint-strong:rgba(72,88,58,0.14);
     --on-primary:#FFFFFF;
-    --rosa:#FBD6DE;
-    --accent:#A8672A;
-    --accent-strong:#7F4E1F;
-    --accent-tint:#F5EADA;
-    --berry:#B3261E;
-    --berry-strong:#8C1E18;
-    --berry-tint:#FBE8E6;
-    --safe:#2E7D5B;
-    --safe-strong:#1F5C42;
-    --safe-tint:#E3F1EA;
-    --surface-dark:#1B1015;
-    --surface-dark-2:#26161D;
-    --ink-on-dark:#F8EFF2;
-    --ink-on-dark-soft:rgba(248,239,242,0.68);
-    --ink-on-dark-faint:rgba(248,239,242,0.44);
-    --line-on-dark:rgba(248,239,242,0.14);
-    --shadow-sm:0 1px 2px rgba(32,19,23,0.05);
-    --shadow: 0 1px 2px rgba(32,19,23,0.04), 0 26px 52px -24px rgba(74,0,31,0.24);
-    --shadow-lg:0 32px 64px -28px rgba(74,0,31,0.32);
-    --radius-card:22px;
-    --radius-lg:30px;
+    --rosa:#EFE3B8;
+    --accent:#AD8148;
+    --accent-strong:#856032;
+    --accent-tint:#F3E8D2;
+    --berry:#93503A;
+    --berry-strong:#723C2B;
+    --berry-tint:#F1E1D8;
+    --safe:#3E7A5E;
+    --safe-strong:#2C5B45;
+    --safe-tint:#E3F0E9;
+    --surface-dark:#20241A;
+    --surface-dark-2:#2B3122;
+    --ink-on-dark:#F4F1E4;
+    --ink-on-dark-soft:rgba(244,241,228,0.68);
+    --ink-on-dark-faint:rgba(244,241,228,0.44);
+    --line-on-dark:rgba(244,241,228,0.14);
+    --shadow-sm:0 1px 2px rgba(30,32,22,0.05);
+    --shadow: 0 1px 2px rgba(30,32,22,0.04), 0 26px 52px -24px rgba(48,58,32,0.22);
+    --shadow-lg:0 32px 64px -28px rgba(48,58,32,0.3);
+    --radius-card:26px;
+    --radius-lg:36px;
     --font-display:'Sora', -apple-system, 'Segoe UI', sans-serif;
     --font-body:'Inter', -apple-system, 'Segoe UI', sans-serif;
     --font-mono:'IBM Plex Mono', 'Courier New', monospace;
   }
 
   *{box-sizing:border-box;}
+  html{overflow-x:hidden;}
   body{
     margin:0;
     background:var(--paper);
@@ -64,7 +65,15 @@
     font-family:var(--font-body);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
   }
+  .bg-deco{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+  .bg-deco span{position:absolute;border-radius:50%;filter:blur(2px);opacity:0.55;}
+  .bg-deco .b1{width:46vw;height:46vw;max-width:620px;max-height:620px;background:radial-gradient(circle at 35% 35%, var(--primary-bright), transparent 68%);top:-18vw;left:-16vw;opacity:0.28;}
+  .bg-deco .b2{width:34vw;height:34vw;max-width:460px;max-height:460px;background:radial-gradient(circle at 60% 40%, var(--rosa), transparent 70%);top:6vw;right:-10vw;opacity:0.4;}
+  .bg-deco .b3{width:38vw;height:38vw;max-width:520px;max-height:520px;background:radial-gradient(circle at 40% 60%, var(--accent-tint), transparent 70%);bottom:-14vw;left:10vw;opacity:0.5;}
+  @media (max-width:640px){ .bg-deco .b1,.bg-deco .b2,.bg-deco .b3{opacity:0.22;} }
   h1,h2,h3,h4{
     font-family:var(--font-display);
     font-weight:800;
@@ -130,7 +139,7 @@
   @keyframes panelIn{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
   .tab-panel.enter{animation:panelIn .32s cubic-bezier(.16,1,.3,1);}
 
-  /* in-page quick nav (Cronograma y clases) */
+  /* in-page quick nav */
   .quicknav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
   .quicknav a{
     display:inline-flex;align-items:center;gap:8px;
@@ -167,27 +176,46 @@
   /* hero de apertura (Tab Programa) */
   .hero-block{
     padding-bottom:8px;position:relative;
-    background:radial-gradient(120% 100% at 100% 0%, var(--primary-tint-strong), transparent 62%);
     border-radius:36px;
   }
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:center;}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
   .hero-block .eyebrow{margin-bottom:2px;}
   .hero-block h1{
-    font-size:clamp(2.2rem,5.2vw,3.4rem);font-weight:800;letter-spacing:-0.03em;
-    line-height:1.05;max-width:18ch;margin:10px 0 16px;
+    font-size:clamp(2.1rem,4.6vw,3.15rem);font-weight:800;letter-spacing:-0.03em;
+    line-height:1.06;margin:10px 0 16px;
   }
   .hero-block h1 .hl{
-    background:linear-gradient(100deg, var(--primary-tint-strong), var(--rosa) 130%);
+    background:linear-gradient(100deg, var(--rosa), var(--accent-tint) 130%);
     color:var(--primary-strong);
-    padding:0.04em 0.32em;border-radius:0.85em;
+    padding:0.04em 0.32em;border-radius:0.5em;
     display:inline-block;box-decoration-break:clone;-webkit-box-decoration-break:clone;
   }
-  .hero-deco{position:absolute;pointer-events:none;}
-  .hero-deco.d1{width:56px;height:56px;border-radius:16px;background:var(--primary-tint-strong);border:1.5px solid var(--primary-bright);top:0;right:64px;transform:rotate(16deg);opacity:0.7;}
-  .hero-deco.d2{width:26px;height:26px;border-radius:9px;background:var(--rosa);top:58px;right:150px;transform:rotate(-14deg);opacity:0.8;}
-  .hero-deco.d3{width:14px;height:14px;border-radius:50%;background:var(--primary);top:10px;right:20px;opacity:0.75;}
-  .hero-deco.d4{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle, var(--primary-glow), transparent 70%);filter:blur(6px);top:-40px;right:-30px;opacity:0.55;}
-  .hero-deco.d5{width:18px;height:18px;border-radius:6px;border:1.5px solid var(--ink-faint);top:120px;right:40px;transform:rotate(20deg);opacity:0.4;}
-  @media (max-width:860px){ .hero-deco{display:none;} }
+  .hero-visual{
+    position:relative;aspect-ratio:1/1.02;border-radius:var(--radius-lg);overflow:hidden;
+    background:linear-gradient(150deg, var(--primary) 0%, var(--primary-strong) 55%, var(--surface-dark) 100%);
+    box-shadow:var(--shadow-lg);
+  }
+  .hero-visual::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(255,255,255,0.16) 1.5px, transparent 1.5px);
+    background-size:22px 22px;opacity:0.6;
+  }
+  .hero-visual .orb{position:absolute;border-radius:50%;}
+  .hero-visual .orb.o1{width:58%;height:58%;background:radial-gradient(circle at 35% 35%, rgba(255,255,255,0.28), transparent 70%);top:-10%;right:-14%;}
+  .hero-visual .orb.o2{width:34%;height:34%;background:var(--rosa);opacity:0.85;bottom:9%;left:10%;filter:blur(1px);}
+  .hero-visual .orb.o3{width:16%;height:16%;background:var(--accent-tint);opacity:0.8;top:20%;left:16%;}
+  .hero-visual .mark-big{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  }
+  .hero-visual .mark-big svg{width:46%;height:46%;filter:drop-shadow(0 18px 30px rgba(0,0,0,0.28));}
+  .hero-visual .visual-tag{
+    position:absolute;left:20px;bottom:20px;right:20px;
+    background:rgba(255,255,255,0.14);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.22);border-radius:16px;padding:12px 16px;
+    color:#fff;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.03em;line-height:1.5;
+  }
+  @media (max-width:900px){ .hero-visual{aspect-ratio:16/10;max-width:480px;margin-inline:auto;} }
 
   .icon-badge{
     display:inline-flex;align-items:center;justify-content:center;flex:none;
@@ -221,9 +249,10 @@
 
   .grid{display:grid;gap:18px;}
   .grid-2{grid-template-columns:repeat(2,1fr);}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
   .grid-4{grid-template-columns:repeat(4,1fr);}
-  @media (max-width:820px){ .grid-4{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .grid-2,.grid-4{grid-template-columns:1fr;} }
+  @media (max-width:820px){ .grid-3,.grid-4{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;} }
 
   .card{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
@@ -248,7 +277,24 @@
     color:var(--ink-faint);margin-top:2px;
   }
 
-  /* compare (antes/despues) */
+  /* modulo tiles (mapa curricular) */
+  .module-card{padding:0;overflow:hidden;}
+  .module-thumb{
+    height:120px;position:relative;display:flex;align-items:flex-end;padding:16px 20px;
+    background:linear-gradient(135deg, var(--m-a) 0%, var(--m-b) 100%);
+  }
+  .module-thumb::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle, rgba(255,255,255,0.22) 1.5px, transparent 1.5px);
+    background-size:16px 16px;
+  }
+  .module-thumb .icon-badge{position:relative;background:rgba(255,255,255,0.2);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.3);}
+  .module-body{padding:20px 22px 24px;}
+  .module-card.mod-1{--m-a:var(--primary);--m-b:var(--primary-strong);}
+  .module-card.mod-2{--m-a:var(--accent);--m-b:var(--accent-strong);}
+  .module-card.mod-3{--m-a:var(--berry);--m-b:var(--berry-strong);}
+
+  /* comparar (justificacion / objetivo) */
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media (max-width:640px){ .compare{grid-template-columns:1fr;} }
   .compare .card{border-top-width:3px;border-top-style:solid;}
@@ -256,14 +302,6 @@
   .compare .card.after{border-top-color:var(--primary);}
   .compare .label{font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);}
   .compare .after .label{color:var(--primary-strong);}
-
-  /* session bar */
-  .session-bar{display:flex;width:100%;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
-  .session-bar span{display:block;height:100%;}
-  .session-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px;margin-top:14px;}
-  .session-legend .item{display:flex;gap:8px;font-size:0.85rem;color:var(--ink-soft);}
-  .session-legend .swatch{width:12px;height:12px;border-radius:3px;flex:none;margin-top:4px;}
-  .session-legend b{color:var(--ink);font-family:var(--font-mono);font-weight:600;}
 
   /* tables */
   .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--surface);box-shadow:var(--shadow);}
@@ -285,7 +323,7 @@
 
   .month-flag{font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);}
 
-  /* pills for data levels */
+  /* pills para niveles de dato */
   .pill{
     display:inline-flex;align-items:center;gap:5px;
     font-family:var(--font-body);font-size:0.76rem;font-weight:700;
@@ -296,7 +334,7 @@
   .pill[data-level="libre"]{background:var(--safe-tint);color:var(--safe-strong);}
   .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;}
 
-  /* accordions: un solo contenedor, filas divididas (patron tipo FAQ) */
+  /* acordeones: un solo contenedor, filas divididas (patron tipo FAQ) */
   .accordion-group{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
     box-shadow:var(--shadow);overflow:hidden;
@@ -327,6 +365,8 @@
     width:40px;height:40px;border-radius:12px;flex:none;
     display:flex;align-items:center;justify-content:center;
   }
+  .class-num.m2{background:linear-gradient(135deg, var(--accent-strong), var(--accent));}
+  .class-num.m3{background:linear-gradient(135deg, var(--berry-strong), var(--berry));}
   .class-summary-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
   .class-summary-text .t{font-weight:700;font-size:0.98rem;}
   .class-summary-text .m{font-size:0.8rem;color:var(--ink-faint);font-family:var(--font-mono);}
@@ -336,18 +376,9 @@
     font-size:0.94rem;color:var(--ink-soft);
   }
   .class-body h4{font-size:0.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint);font-family:var(--font-mono);margin:22px 0 10px;}
-
-  /* timeline */
-  .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);margin-left:6px;}
-  .timeline li{position:relative;padding:0 0 16px 22px;}
-  .timeline li:last-child{padding-bottom:0;}
-  .timeline li::before{
-    content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;
-    background:var(--primary);border:2px solid var(--surface);
-  }
-  .timeline .time{font-family:var(--font-mono);font-size:0.76rem;color:var(--primary-strong);font-weight:600;display:block;}
-  .timeline .blk{font-weight:700;font-size:0.94rem;margin-top:2px;display:block;}
-  .timeline .desc{font-size:0.88rem;color:var(--ink-soft);margin-top:2px;}
+  .class-body ul.content-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .class-body ul.content-list li{position:relative;padding-left:18px;font-size:0.92rem;color:var(--ink-soft);}
+  .class-body ul.content-list li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--primary-bright);}
 
   pre{
     background:var(--surface-dark);border:1px solid rgba(248,239,242,0.08);border-radius:14px;
@@ -361,14 +392,6 @@
     border-radius:999px;padding:5px 13px;color:var(--ink-soft);
   }
 
-  .rubric-item{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid var(--line-soft);}
-  .rubric-item:last-child{border-bottom:none;}
-  .rubric-item .crit{font-weight:700;font-size:0.9rem;}
-  .rubric-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.85rem;color:var(--ink-soft);}
-  .rubric-flow .from{background:var(--surface-2);border-radius:7px;padding:4px 10px;}
-  .rubric-flow .to{background:var(--primary-tint-strong);color:var(--primary-strong);border-radius:7px;padding:4px 10px;font-weight:700;}
-  .rubric-flow .arrow{color:var(--ink-faint);flex:none;}
-
   .callout{
     border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:12px;
     padding:16px 18px;background:var(--primary-tint);display:flex;gap:12px;
@@ -379,6 +402,8 @@
   .callout--warn .ic{color:var(--accent-strong);}
   .callout--danger{border-left-color:var(--berry);background:var(--berry-tint);}
   .callout--danger .ic{color:var(--berry-strong);}
+  .callout--safe{border-left-color:var(--safe);background:var(--safe-tint);}
+  .callout--safe .ic{color:var(--safe-strong);}
 
   .spotlight{
     background:linear-gradient(135deg, var(--primary), var(--primary-strong));border-radius:var(--radius-lg);
@@ -392,28 +417,14 @@
   .spotlight p{color:#fff;font-size:1.05rem;font-weight:500;line-height:1.5;}
   @media (max-width:560px){ .spotlight{flex-direction:column;padding:26px;} }
 
-  .facilitator-note{
-    background:var(--surface-2);border:1px dashed var(--line);border-radius:12px;
-    padding:14px 16px;font-size:0.88rem;color:var(--ink-soft);
-  }
-
-  .pending-card{
-    border:1px dashed var(--line);border-radius:var(--radius-card);padding:22px;
-    background:var(--surface-2);display:flex;flex-direction:column;gap:6px;
-    transition:transform .2s cubic-bezier(.16,1,.3,1), border-color .2s ease;
-  }
-  .pending-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb, var(--accent) 45%, var(--line));}
-  .pending-card .t{font-weight:700;font-size:0.94rem;}
-  .pending-card .m{font-size:0.8rem;color:var(--ink-faint);font-family:var(--font-mono);}
-  .pending-flag{font-family:var(--font-mono);font-size:0.68rem;color:var(--accent-strong);background:var(--accent-tint);padding:2px 9px;border-radius:999px;align-self:flex-start;}
-
   .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media (max-width:640px){ .tier-row{grid-template-columns:1fr;} }
-  .tier-card{border-radius:var(--radius-card);padding:24px;border:1px solid var(--line);background:var(--surface);transition:transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;}
+  .tier-card{border-radius:var(--radius-card);padding:24px;border:1px solid var(--line);background:var(--surface);transition:transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;display:flex;flex-direction:column;gap:8px;}
   .tier-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-  .tier-card .range{font-family:var(--font-display);font-size:1.9rem;font-weight:800;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;}
-  .tier-card .lvl{font-size:0.85rem;color:var(--ink-soft);margin-top:4px;}
-  .tier-card.t1{border-top:3px solid var(--ink-faint);}
+  .tier-card .range{font-family:var(--font-display);font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;}
+  .tier-card .lvl{font-size:0.85rem;color:var(--ink-soft);}
+  .tier-card p{font-size:0.86rem;color:var(--ink-soft);}
+  .tier-card.t1{border-top:3px solid var(--safe);}
   .tier-card.t2{border-top:3px solid var(--accent);}
   .tier-card.t3{border-top:3px solid var(--primary);}
 
@@ -468,8 +479,34 @@
   .section-dark .showcase-panel{background:var(--surface);border-radius:var(--radius-card);padding:28px;}
   .section-dark .tier-card:hover{box-shadow:0 22px 44px -20px rgba(0,0,0,0.6);}
 
-  footer{background:var(--surface-dark);border-top:none;padding-block:32px;margin-top:36px;}
-  footer .shell{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:0.8rem;color:var(--ink-on-dark-soft);font-family:var(--font-mono);}
+  footer{padding-block:0 40px;margin-top:36px;}
+  .footer-panel{
+    background:var(--surface-dark);border-radius:var(--radius-lg);color:var(--ink-on-dark);
+    padding:44px clamp(22px,4vw,52px) 28px;position:relative;overflow:hidden;isolation:isolate;
+  }
+  .footer-panel::before{
+    content:"";position:absolute;z-index:-1;bottom:-40%;left:-10%;width:55%;height:120%;
+    background:radial-gradient(circle, var(--primary-glow), transparent 70%);filter:blur(50px);opacity:0.6;
+  }
+  .footer-top{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;margin-bottom:34px;}
+  .footer-brand{max-width:280px;display:flex;flex-direction:column;gap:10px;}
+  .footer-brand .name{font-family:var(--font-display);font-weight:800;font-size:1.15rem;letter-spacing:-0.01em;}
+  .footer-brand p{color:var(--ink-on-dark-soft);font-size:0.85rem;}
+  .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+  .footer-col{display:flex;flex-direction:column;gap:10px;min-width:150px;}
+  .footer-col .h{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-on-dark-faint);margin-bottom:4px;}
+  .footer-link{
+    font:inherit;font-family:var(--font-body);font-size:0.87rem;color:var(--ink-on-dark-soft);
+    background:none;border:none;padding:0;text-align:left;cursor:pointer;
+    transition:color .15s ease;
+  }
+  .footer-link:hover{color:#fff;}
+  .footer-bottom{
+    display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;
+    padding-top:22px;border-top:1px solid var(--line-on-dark);
+    font-size:0.78rem;color:var(--ink-on-dark-faint);font-family:var(--font-mono);
+  }
+  @media (max-width:640px){ .footer-cols{gap:28px 36px;} }
 
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important;animation:none !important;}
@@ -477,6 +514,8 @@
 </style>
 </head>
 <body>
+
+<div class="bg-deco" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
 
 <header class="site-header">
   <div class="shell">
@@ -489,15 +528,15 @@
         <path d="M13.8 24.8 L18 21.5 M23.2 17.8 L27.3 14.5" stroke="var(--ink-faint)" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
       <div class="brand-text">
-        <span class="name">Ruta IA · SEJUVE Guerrero</span>
-        <span class="sub">Guía del facilitador &middot; capacitación en inteligencia artificial aplicada</span>
+        <span class="name">Programa IA · SEJUVE Guerrero</span>
+        <span class="sub">Programa de Capacitación Institucional en Inteligencia Artificial Aplicada</span>
       </div>
-      <div class="brand-meta">3 meses &middot; 12 sesiones<br>Secretaría de la Juventud y la Niñez</div>
+      <div class="brand-meta">12 sesiones &middot; 3 módulos<br>Secretaría de la Juventud y la Niñez</div>
     </div>
     <nav class="tablist" role="tablist" aria-label="Secciones del programa">
       <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-programa" data-target="panel-programa">Programa</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-cronograma" data-target="panel-cronograma">Cronograma y clases</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-evaluacion" data-target="panel-evaluacion">Evaluación y normativa</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-cronograma" data-target="panel-cronograma">Cronograma y sesiones</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-evaluacion" data-target="panel-evaluacion">Gobernanza y presupuesto</button>
     </nav>
   </div>
 </header>
@@ -508,629 +547,713 @@
 <section class="tab-panel" id="panel-programa" role="tabpanel">
 
   <div class="section hero-block">
-    <span class="hero-deco d4" aria-hidden="true"></span>
-    <span class="hero-deco d1" aria-hidden="true"></span>
-    <span class="hero-deco d2" aria-hidden="true"></span>
-    <span class="hero-deco d3" aria-hidden="true"></span>
-    <span class="hero-deco d5" aria-hidden="true"></span>
-    <span class="eyebrow">Guía del facilitador</span>
-    <h1>De uso básico a <span class="hl">uso responsable</span> de IA generativa</h1>
-    <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero a un uso intermedio, aplicado y responsable de IA en sus funciones cotidianas.</p>
-    <div class="chip-row">
-      <span class="chip">1 facilitador + 1 asistente técnico</span>
-      <span class="chip">4 ejes de competencia</span>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Perfil práctico, administrativo y No-Code</span>
+        <h1>Formación en <span class="hl">Inteligencia Artificial</span> y automatización de procesos administrativos</h1>
+        <p class="lede">Programa dirigido a personal directivo, administrativo, enlaces regionales y personal operativo de la SEJUVE, con enfoque de <b>costo cero</b> y <b>continuidad administrativa</b>, bajo el marco normativo de protección de datos del ITAIGro.</p>
+        <div class="chip-row">
+          <span class="chip">Modalidad presencial &middot; Aula de cómputo</span>
+          <span class="chip">Metodología Learning by Doing</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <span class="orb o1"></span>
+        <span class="orb o2"></span>
+        <span class="orb o3"></span>
+        <div class="mark-big">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="27" r="4.6" fill="#fff"/>
+            <circle cx="20.5" cy="19.5" r="4.6" fill="var(--rosa)"/>
+            <circle cx="30" cy="12" r="4.6" fill="#fff"/>
+            <path d="M13.8 24.8 L18 21.5 M23.2 17.8 L27.3 14.5" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="visual-tag">Ecosistema&nbsp;&middot;&nbsp;Google Workspace &middot; Gemini &middot; NotebookLM &middot; Make &middot; Grok</div>
+      </div>
     </div>
     <div class="stat-row">
-      <div><span class="num">3</span><div class="cap">meses de duración</div></div>
-      <div><span class="num">12</span><div class="cap">sesiones semanales</div></div>
-      <div><span class="num">180</span><div class="cap">minutos por sesión</div></div>
-      <div><span class="num">15&ndash;25</span><div class="cap">personas por grupo</div></div>
+      <div><span class="num">12</span><div class="cap">sesiones de trabajo presenciales</div></div>
+      <div><span class="num">3</span><div class="cap">módulos continuos</div></div>
+      <div><span class="num">80%</span><div class="cap">asistencia mínima requerida</div></div>
+      <div><span class="num">100%</span><div class="cap">interactivo, Learning by Doing</div></div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head">
-      <h2>De dónde parte el personal y a dónde llega</h2>
-      <p>La guía está pensada para que el programa se imparta con consistencia aunque cambie quién lo facilita.</p>
-    </div>
-    <div class="compare">
-      <div class="card before">
-        <span class="label">Diagnóstico de entrada</span>
-        <p>Exposición ocasional a chatbots de uso general, redacción administrativa manual, hojas de cálculo estáticas y nula trazabilidad en el manejo de datos de niñas, niños y adolescentes en los procesos de atención.</p>
-      </div>
-      <div class="card after">
-        <span class="label">Meta a 3 meses</span>
-        <p>Personal que redacta con apoyo de IA validando cada salida, investiga con fuentes verificables, anonimiza datos sensibles antes de procesarlos y automatiza al menos un flujo operativo real de su área sin depender de desarrollo a la medida.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-head">
-      <h2>Principios de diseño del programa</h2>
-    </div>
-    <div class="grid grid-4">
-      <div class="card">
-        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <h3>Caso real de SEJUVE en cada clase</h3>
-        <p>Ningún ejercicio usa datos genéricos cuando puede usar un proceso real del área: solicitudes ciudadanas, convocatorias juveniles, expedientes de atención, reportes a Bienestar estatal.</p>
-      </div>
-      <div class="card">
-        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-        <h3>La niñez como criterio de diseño</h3>
-        <p>El resguardo de datos de menores de edad se introduce desde la Clase 1 y se audita explícitamente en la Clase 4 y en el proyecto integrador.</p>
-      </div>
-      <div class="card">
-        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2 8.5 5-8.5 5-8.5-5L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 12 8.5 5 8.5-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 17 8.5 5 8.5-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-        <h3>Herramienta gratuita o institucional</h3>
-        <p>Todo el programa opera con capas gratuitas o licenciamiento ya disponible en el gobierno estatal.</p>
-      </div>
-      <div class="card">
-        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="7" y="13" width="3" height="5" stroke="currentColor" stroke-width="1.6"/><rect x="12" y="9" width="3" height="9" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="5" width="3" height="13" stroke="currentColor" stroke-width="1.6"/></svg></span>
-        <h3>Evaluación formativa, no punitiva</h3>
-        <p>Cada clase cierra con una rúbrica de 4 niveles pensada para dar retroalimentación, no para descalificar personal con menor alfabetización digital previa.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section section-dark">
-    <div class="section-head">
-      <h2>Cuatro ejes de competencia</h2>
-      <p>Cada clase del programa se ancla en uno o más de estos ejes.</p>
-    </div>
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-        <span class="eyebrow" style="margin-top:12px;">Eje 1</span>
-        <h3>Redacción y comunicación institucional asistida</h3>
-        <p>Oficios, respuestas ciudadanas, actas, convocatorias e informes redactados con apoyo de IA y validados antes de firma.</p>
-        <span class="tag">Clases 01, 02, 08</span>
-      </div>
-      <div class="card">
-        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-        <span class="eyebrow" style="margin-top:12px;">Eje 2</span>
-        <h3>Análisis de necesidades juveniles con datos</h3>
-        <p>Lectura de bases comunitarias, consultas en lenguaje natural y diagnósticos sociales con fuentes citadas.</p>
-        <span class="tag">Clases 03, 05, 06, 08</span>
-      </div>
-      <div class="card">
-        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.5 12 2.4 2.4L15.5 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="eyebrow" style="margin-top:12px;">Eje 3</span>
-        <h3>Protección y anonimización de datos de niñez</h3>
-        <p>Clasificación de datos sensibles, enmascaramiento de identificadores y pipelines de anonimización para expedientes de personas menores de edad.</p>
-        <span class="tag">Clases 04, 07</span>
-      </div>
-      <div class="card">
-        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-        <span class="eyebrow" style="margin-top:12px;">Eje 4</span>
-        <h3>Automatización operativa No-Code</h3>
-        <p>Mapeo de flujos, alertas automáticas y presentaciones ejecutivas generadas sin programar.</p>
-        <span class="tag">Clases 09, 10, 11</span>
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top:16px;">
-      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.5 12 2.4 2.4L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <p><b>Proyecto integrador (Clase 12):</b> cada persona o equipo presenta un caso de su propia dirección que combine al menos 3 de los 4 ejes. Ejemplo: un flujo que reciba solicitudes de apoyo (Eje 4), las resuma con datos anonimizados de las familias solicitantes (Eje 3), calcule prioridad con una consulta en lenguaje natural (Eje 2) y genere automáticamente el oficio de respuesta (Eje 1).</p>
-    </div>
-  </div>
-
-  <div class="section section-dark">
-    <div class="section-head">
-      <h2>Estructura de sesión tipo</h2>
-      <p>Las 12 cartas descriptivas del programa siguen el mismo esqueleto de 180 minutos.</p>
-    </div>
-    <div class="showcase-panel">
-      <div class="session-bar" aria-hidden="true">
-        <span style="width:8.3%;background:var(--primary);"></span>
-        <span style="width:16.7%;background:color-mix(in srgb, var(--primary) 80%, var(--surface));"></span>
-        <span style="width:13.9%;background:color-mix(in srgb, var(--primary) 60%, var(--surface));"></span>
-        <span style="width:44.4%;background:var(--accent);"></span>
-        <span style="width:11.1%;background:color-mix(in srgb, var(--primary) 40%, var(--surface));"></span>
-        <span style="width:5.6%;background:var(--ink-faint);"></span>
-      </div>
-      <div class="session-legend">
-        <div class="item"><span class="swatch" style="background:var(--primary);"></span><span><b>15 min</b> &middot; Apertura y activación</span></div>
-        <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 80%, var(--surface));"></span><span><b>30 min</b> &middot; Marco conceptual</span></div>
-        <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 60%, var(--surface));"></span><span><b>25 min</b> &middot; Demostración guiada</span></div>
-        <div class="item"><span class="swatch" style="background:var(--accent);"></span><span><b>80 min</b> &middot; Taller práctico aplicado</span></div>
-        <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 40%, var(--surface));"></span><span><b>20 min</b> &middot; Puesta en común</span></div>
-        <div class="item"><span class="swatch" style="background:var(--ink-faint);"></span><span><b>10 min</b> &middot; Cierre y tarea</span></div>
-      </div>
-      <p style="margin-top:16px;font-size:0.88rem;color:var(--ink-soft);">Si la sesión real dura menos de 3 horas: comprimir primero el Bloque 2 (marco conceptual) y el Bloque 6 (cierre). Nunca comprimir el Bloque 4, el taller práctico: es donde ocurre el aprendizaje transferible.</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-head">
-      <h2>Requisitos técnicos generales</h2>
+      <h2>Ficha técnica</h2>
+      <p>Especificación institucional del programa.</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Recurso</th><th>Uso en el programa</th><th>Costo</th></tr></thead>
+        <thead><tr><th>Rubro</th><th>Especificación institucional</th></tr></thead>
         <tbody>
-          <tr><td class="strong">Cuenta de Google (institucional o Gmail)</td><td>Colab, Sheets, acceso a Gemini</td><td>Gratuito</td></tr>
-          <tr><td class="strong">Navegador actualizado (Chrome / Edge)</td><td>Todas las herramientas web del curso</td><td>&mdash;</td></tr>
-          <tr><td class="strong">Conexión estable &ge; 5 Mbps</td><td>Sesiones sincrónicas y ejecución en Colab</td><td>&mdash;</td></tr>
-          <tr><td class="strong">ChatGPT, Claude, Gemini, Perplexity</td><td>Clases 1, 2, 3, 8</td><td>Nivel gratuito suficiente</td></tr>
-          <tr><td class="strong">Python en Colab (Pandas, Regex, Faker, spaCy, Presidio)</td><td>Clases 1, 5, 6, 7</td><td>Gratuito vía Colab</td></tr>
-          <tr><td class="strong">Make / Power Automate / Zapier</td><td>Clases 9 y 10</td><td>Nivel gratuito con límite de ejecuciones</td></tr>
-          <tr><td class="strong">Gamma App, Canva, python-pptx</td><td>Clase 11</td><td>Nivel gratuito suficiente</td></tr>
+          <tr><td class="strong">Denominación</td><td>Programa de Formación en Inteligencia Artificial y Automatización de Procesos Administrativos</td></tr>
+          <tr><td class="strong">Dirigido a</td><td>Personal directivo, administrativo, enlaces regionales y personal operativo de la SEJUVE</td></tr>
+          <tr><td class="strong">Duración y estructura</td><td>12 sesiones de trabajo presenciales estructuradas en 3 módulos continuos</td></tr>
+          <tr><td class="strong">Modalidad</td><td>Presencial / Aula de cómputo (100% interactivo bajo metodología Learning by Doing)</td></tr>
+          <tr><td class="strong">Requisitos técnicos</td><td>Equipo de cómputo individual con acceso a internet; cuenta institucional activa en Google Workspace</td></tr>
+          <tr><td class="strong">Criterios de acreditación</td><td>Asistencia mínima del 80% y entrega del expediente operativo completo (12 productos aplicados)</td></tr>
+          <tr><td class="strong">Ecosistema de software</td><td>Google Workspace (Docs, Sheets, Forms, Drive), Gemini (Canvas / Gems), NotebookLM, Make, Grok institucional</td></tr>
         </tbody>
       </table>
     </div>
+    <div class="callout" style="margin-top:18px;">
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <p><b>Marco normativo:</b> Lineamientos de Protección de Datos Personales del Instituto de Transparencia, Acceso a la Información y Protección de Datos Personales del Estado de Guerrero (ITAIGro), aplicable desde la primera sesión del programa.</p>
+    </div>
   </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Justificación y propósito institucional</h2>
+      <p>Por qué la SEJUVE necesita este programa y qué cambia al terminarlo.</p>
+    </div>
+    <div class="compare">
+      <div class="card before">
+        <span class="label">Justificación</span>
+        <p>La carga burocrática rutinaria, la dispersión territorial en las distintas regiones del estado (Montaña, Costa Chica, Costa Grande, Centro, Norte, Tierra Caliente) y los límites presupuestales exigen modernizar los procesos de la SEJUVE con herramientas de uso inmediato, costo cero y alta resistencia operativa.</p>
+      </div>
+      <div class="card after">
+        <span class="label">Objetivo general</span>
+        <p>Desarrollar en el personal de la SEJUVE competencias prácticas para implementar soluciones de IA generativa y flujos de automatización desatendidos, reduciendo tiempos de gestión y errores de captura manual, con estricto apego a la normativa del ITAIGro y sostenibilidad presupuestal.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section-dark">
+    <div class="section-head">
+      <h2>Objetivos específicos</h2>
+      <p>Cuatro compromisos que atraviesan los tres módulos del programa.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <h3>Candados de seguridad y gobernanza</h3>
+        <p>Instaurados desde el inicio para evitar filtraciones de información clasificada o datos de menores.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <h3>Sistematizar redacción y análisis</h3>
+        <p>Redacción documental, revisión jurídica y análisis normativo mediante modelos cerrados sin costo de licenciamiento.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <h3>Flujo integral continuo</h3>
+        <p>Conecta el registro en territorio (con o sin internet), la emisión de acuses foliados y la generación masiva de constancias oficiales.</p>
+      </div>
+      <div class="card">
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="7" y="13" width="3" height="5" stroke="currentColor" stroke-width="1.6"/><rect x="12" y="9" width="3" height="9" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="5" width="3" height="13" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <h3>Permanencia institucional</h3>
+        <p>Carpetas compartidas y manuales de relevo operativo que garantizan la continuidad de las automatizaciones.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="eyebrow">Mapa curricular</span>
+      <h2>Tres módulos, doce sesiones</h2>
+      <p>Ruta de aprendizaje continua: de los fundamentos documentales a la automatización desatendida de flujos completos.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card module-card mod-1">
+        <div class="module-thumb"><span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+        <div class="module-body">
+          <span class="eyebrow">Módulo 1 &middot; Sesiones 1&ndash;4</span>
+          <h3 style="margin-top:6px;">Fundamentos de IA y productividad documental</h3>
+          <ol style="margin:.6em 0 0;padding-left:1.1em;color:var(--ink-soft);font-size:0.86rem;display:flex;flex-direction:column;gap:6px;">
+            <li>Fundamentos y mentalidad de IA en la gestión pública</li>
+            <li>Prompting institucional (RICE, Few-Shot)</li>
+            <li>Análisis normativo con Google NotebookLM</li>
+            <li>Co-creación de documentos con Gemini Canvas</li>
+          </ol>
+        </div>
+      </div>
+      <div class="card module-card mod-2">
+        <div class="module-thumb"><span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+        <div class="module-body">
+          <span class="eyebrow">Módulo 2 &middot; Sesiones 5&ndash;8</span>
+          <h3 style="margin-top:6px;">Inteligencia de datos, monitoreo social y difusión institucional</h3>
+          <ol style="margin:.6em 0 0;padding-left:1.1em;color:var(--ink-soft);font-size:0.86rem;display:flex;flex-direction:column;gap:6px;">
+            <li>Marco de seguridad y gobernanza de datos</li>
+            <li>Auditoría de padrones y reportes ejecutivos</li>
+            <li>Monitoreo con Grok y difusión multicanal</li>
+            <li>Registro digital en territorio (QR y offline)</li>
+          </ol>
+        </div>
+      </div>
+      <div class="card module-card mod-3">
+        <div class="module-thumb"><span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span></div>
+        <div class="module-body">
+          <span class="eyebrow">Módulo 3 &middot; Sesiones 9&ndash;12</span>
+          <h3 style="margin-top:6px;">Automatización de flujos, atención ciudadana y asistentes de gestión</h3>
+          <ol style="margin:.6em 0 0;padding-left:1.1em;color:var(--ink-soft);font-size:0.86rem;display:flex;flex-direction:column;gap:6px;">
+            <li>Asistentes institucionales (Gems / NotebookLM)</li>
+            <li>Automatización I: acuses y archivo en Drive</li>
+            <li>Automatización II: emisión masiva de constancias</li>
+            <li>Evaluación de impacto y manual de relevo</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- ================= TAB 2: CRONOGRAMA Y CLASES ================= -->
+<!-- ================= TAB 2: CRONOGRAMA Y SESIONES ================= -->
 <section class="tab-panel" id="panel-cronograma" role="tabpanel" hidden>
 
   <nav class="quicknav" aria-label="Navegación dentro de esta pestaña">
     <a href="#cronograma-tabla">Cronograma completo<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-    <a href="#mes1-cartas">Cartas Mes 1<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-    <a href="#mes2-cartas">Mes 2<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-    <a href="#mes3-cartas">Mes 3<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#modulo-1">Módulo 1<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#modulo-2">Módulo 2<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#modulo-3">Módulo 3<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   </nav>
 
   <div class="section anchor-target section-dark" id="cronograma-tabla">
     <div class="section-head">
       <h2>Cronograma completo del programa</h2>
-      <p>Las Clases 1 a 4 (Mes 1) están desarrolladas a nivel de carta descriptiva completa más abajo. Mes 2 y Mes 3 siguen la misma plantilla, pendientes de desarrollar con ese mismo nivel de detalle.</p>
+      <p>Las 12 sesiones, con su módulo, herramientas principales y el producto que cierra cada una.</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Clase</th><th>Tema</th><th>Herramientas</th><th>Producto de la clase</th></tr></thead>
+        <thead><tr><th>Sesión</th><th>Tema</th><th>Herramientas</th><th>Producto de la sesión</th></tr></thead>
         <tbody>
-          <tr class="month-1"><td class="strong mono">01<span class="month-flag"><br>Mes 1</span></td><td>Introducción a la IA en el sector público y diagnóstico de madurez digital</td><td>Colab, ChatGPT, Claude, Gemini, Perplexity</td><td>Autodiagnóstico en 6 ámbitos + primer script en Colab</td></tr>
-          <tr class="month-1"><td class="strong mono">02</td><td>Ingeniería de prompts para la gestión pública</td><td>ChatGPT, Claude, Gemini</td><td>Biblioteca de prompts reutilizables</td></tr>
-          <tr class="month-1"><td class="strong mono">03</td><td>Selección especializada de modelos e investigación profunda</td><td>Perplexity, Claude, Gemini Pro</td><td>Cuadro de benchmarking + diagnóstico social citado</td></tr>
-          <tr class="month-1"><td class="strong mono">04</td><td>Ética pública, ciberseguridad y manejo de riesgos</td><td>Checklists de auditoría y validación ética</td><td>Checklist de alucinaciones + protocolo de resguardo aplicado</td></tr>
-          <tr class="month-2"><td class="strong mono">05<span class="month-flag"><br>Mes 2</span></td><td>Calidad de datos y fuentes abiertas gubernamentales</td><td>Colab, Python / Pandas, CSV / Excel</td><td>Análisis exploratorio de solicitudes comunitarias</td></tr>
-          <tr class="month-2"><td class="strong mono">06</td><td>Consultas en lenguaje natural a bases de datos</td><td>Pandas SQL, ChatGPT, Matplotlib</td><td>Consultas priorizadas + gráficos estadísticos</td></tr>
-          <tr class="month-2"><td class="strong mono">07</td><td>Anonimización y protección de datos personales (PII)</td><td>Python: Regex, Faker, spaCy, Presidio</td><td>Pipeline de anonimización de expedientes de menores</td></tr>
-          <tr class="month-2"><td class="strong mono">08</td><td>Informes ejecutivos y diagnósticos sociales</td><td>Perplexity, ChatGPT, Gemini Pro</td><td>Informe ejecutivo de gestión de 1 página</td></tr>
-          <tr class="month-3"><td class="strong mono">09<span class="month-flag"><br>Mes 3</span></td><td>Automatización No-Code / Low-Code y lógica de flujos</td><td>Make, Power Automate, Zapier</td><td>Flujo No-Code de recepción de solicitudes</td></tr>
-          <tr class="month-3"><td class="strong mono">10</td><td>Integración institucional, alertas y correos automáticos</td><td>Power Automate / Make + Outlook / Gmail, Teams, Sheets</td><td>Reportes automáticos y alertas prioritarias</td></tr>
-          <tr class="month-3"><td class="strong mono">11</td><td>Presentaciones ejecutivas visuales de alto impacto</td><td>Gamma, Canva IA, python-pptx</td><td>Deck generado + script confidencial en python-pptx</td></tr>
-          <tr class="month-3"><td class="strong mono">12</td><td>Proyecto integrador y certificación</td><td>Ecosistema completo</td><td>Sustentación del proyecto integrador por área</td></tr>
+          <tr class="month-1"><td class="strong mono">01<span class="month-flag"><br>Módulo 1</span></td><td>Fundamentos y mentalidad de IA en la gestión pública</td><td>Gemini (Google Workspace)</td><td>Ficha de diagnóstico operativo + compromiso del protocolo de datos</td></tr>
+          <tr class="month-1"><td class="strong mono">02</td><td>Prompting institucional (Estructura RICE, Few-Shot)</td><td>Gemini / Claude</td><td>Matriz departamental de prompts institucionales</td></tr>
+          <tr class="month-1"><td class="strong mono">03</td><td>Análisis normativo y fuentes cerradas con Google NotebookLM</td><td>Google NotebookLM + Gemini</td><td>Cuaderno normativo digital con citas verificadas</td></tr>
+          <tr class="month-1"><td class="strong mono">04</td><td>Co-creación y edición de documentos oficiales con Gemini Canvas</td><td>Gemini Canvas + Google Docs</td><td>Documento institucional exportado a Google Docs</td></tr>
+          <tr class="month-2"><td class="strong mono">05<span class="month-flag"><br>Módulo 2</span></td><td>Marco de seguridad y gobernanza de datos</td><td>Paneles de privacidad + Sheets / Excel local</td><td>Cuenta blindada + padrón simulado desinfectado</td></tr>
+          <tr class="month-2"><td class="strong mono">06</td><td>Auditoría de padrones, análisis de datos y reportes ejecutivos</td><td>Claude Analysis Tool / Gemini</td><td>Padrón auditado + informe ejecutivo de una cuartilla</td></tr>
+          <tr class="month-2"><td class="strong mono">07</td><td>Monitoreo con Grok concentrador y difusión multicanal</td><td>Grok institucional + Gemini / Claude</td><td>Kit de difusión multicanal de una convocatoria</td></tr>
+          <tr class="month-2"><td class="strong mono">08</td><td>Registro digital en territorio (QR, offline y rescate por lotes)</td><td>Google Forms + Sheets + Gemini (OCR)</td><td>Formulario con QR, protocolo offline y hoja receptora</td></tr>
+          <tr class="month-3"><td class="strong mono">09<span class="month-flag"><br>Módulo 3</span></td><td>Asistentes institucionales con base de conocimiento</td><td>Google Gems / NotebookLM compartido</td><td>Asistente de Inducción y Trámites de SEJUVE</td></tr>
+          <tr class="month-3"><td class="strong mono">10</td><td>Automatización básica I: acuses automáticos y archivo en Drive</td><td>Make + Sheets + Gmail + Drive</td><td>Escenario en Make + plantilla oficial de acuse</td></tr>
+          <tr class="month-3"><td class="strong mono">11</td><td>Automatización básica II: emisión masiva de constancias en PDF</td><td>Make + Sheets + Docs + Gmail</td><td>Escenario de emisión y despacho masivo en PDF</td></tr>
+          <tr class="month-3"><td class="strong mono">12</td><td>Evaluación de impacto, ahorro de horas y manual de relevo</td><td>Sheets + Gamma / Slides + Drive</td><td>Matriz de horas ahorradas + ficha de relevo administrativo</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <div class="section anchor-target" id="mes1-cartas">
+  <!-- ============ MÓDULO 1 ============ -->
+  <div class="section anchor-target" id="modulo-1">
     <div class="section-head">
-      <span class="eyebrow">Mes 1 &middot; Fundamentos</span>
-      <h2>Cartas descriptivas completas</h2>
-      <p>Objetivo, minuto a minuto, actividades, materiales, rúbrica y notas para el facilitador de cada una de las cuatro primeras clases.</p>
+      <span class="eyebrow">Módulo 1 &middot; Sesiones 1 a 4</span>
+      <h2>Fundamentos de IA y productividad documental</h2>
+      <p>Objetivo, herramientas, contenido clave, actividad práctica y entregable de cada sesión.</p>
     </div>
 
     <div class="accordion-group">
-    <!-- CLASE 1 -->
+    <!-- SESIÓN 1 -->
     <details class="class-card" open>
       <summary>
         <span class="class-num">01</span>
         <span class="class-summary-text">
-          <span class="t">Introducción a la IA en el sector público y diagnóstico de madurez digital</span>
-          <span class="m">Colab &middot; ChatGPT &middot; Claude &middot; Gemini &middot; Perplexity</span>
+          <span class="t">Fundamentos y mentalidad de IA en la gestión pública</span>
+          <span class="m">Gemini (Google Workspace)</span>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </summary>
       <div class="class-body">
-        <p class="obj"><b>Objetivo de aprendizaje:</b> al finalizar la clase, cada participante distingue tres categorías de herramienta de IA generativa (conversacional, de investigación y de análisis de datos), ubica el nivel de madurez digital actual de su propia área en seis ámbitos, y ejecuta su primera celda de código en Google Colab sin asistencia.</p>
+        <p class="obj"><b>Objetivo de la sesión:</b> comprender el funcionamiento operativo de los LLMs, sus alcances y limitaciones en gobierno, identificando cuellos de botella administrativos bajo un estricto candado inicial de seguridad de la información.</p>
 
-        <h4>Carta minuto a minuto</h4>
-        <ul class="timeline">
-          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Pregunta detonadora: "¿En qué momento de esta semana un trámite se hizo más lento por falta de información o de una herramienta?". Se recogen 4&ndash;5 respuestas en vivo.</span></li>
-          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Qué es IA generativa, diferencia entre modelo conversacional y motor de búsqueda con IA; casos de uso ya vigentes en gobiernos estatales de México; límites reales (alucinación, sesgo, dato sensible).</span></li>
-          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador hace la misma pregunta de gestión pública a ChatGPT, Claude y Perplexity en pantalla compartida y compara las tres respuestas con el grupo.</span></li>
-          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
-          <li><span class="time">01:25&ndash;02:20</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Autodiagnóstico institucional (25 min llenado + 30 min puesta en común).</span></li>
-          <li><span class="time">02:20&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Primer script interactivo en Colab.</span></li>
-          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Autoevaluación rápida y tarea: traer a la Clase 2 un oficio o correo real redactado en el último mes.</span></li>
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Modelos LLM en cuentas institucionales de Google Workspace (Gemini)</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Conceptos esenciales (LLMs, ventanas de contexto y limitaciones operativas).</li>
+          <li>Diferenciación entre búsqueda tradicional y generación asistida.</li>
+          <li>Casos de uso directo en gobierno y diseño de políticas de juventud.</li>
+          <li>Protocolo Preventivo de Entrada: qué datos jamás se ingresan a una IA (nombres de menores, CURP, domicilios o convenios en borrador).</li>
         </ul>
 
-        <h4>Actividad 1 &middot; Autodiagnóstico institucional (55 min)</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">Cada participante califica su área (no a sí mismo) de 1 a 4 en seis ámbitos: cultura y liderazgo digital, infraestructura y acceso, competencias del personal, gestión y calidad de datos, automatización de procesos, y ética y protección de datos de niñez. Escala: 1 inexistente, 2 inicial, 3 en desarrollo, 4 consolidado. El resultado se traza como un hexágono de madurez que se vuelve a llenar en la Clase 12 para medir avance.</p>
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Desglose paso a paso de tareas y cálculo de horas-hombre invertidas en papeleo. Cada participante describe su rutina semanal más pesada usando únicamente descripciones genéricas o datos de prueba; la IA genera un mapa de flujo "Antes vs. Después" señalando las tareas a automatizar en el programa.</p>
 
-        <h4>Actividad 2 &middot; Primer script en Colab (30 min)</h4>
-        <pre><code>nombre = input("¿Cuál es tu nombre? ")
-area = input("¿En qué área de SEJUVE trabajas? ")
-nivel = input("Del 1 al 4, ¿tu experiencia previa con IA? ")
-
-print(f"¡Bienvenido/a, {nombre}!")
-print(f"Área: {area}")
-print(f"Nivel declarado: {nivel}/4")</code></pre>
-        <p style="color:var(--ink-soft);font-size:0.88rem;">Reto opcional: quien termine antes guarda cada respuesta en una lista de diccionarios y la imprime como tabla, para anticipar el trabajo con Pandas de la Clase 5.</p>
-
-        <h4>Materiales</h4>
-        <div class="tag-list">
-          <span class="tag-pill">Notebook de Colab precargado</span>
-          <span class="tag-pill">Formato de autodiagnóstico en 6 ámbitos</span>
-          <span class="tag-pill">Cuentas gratuitas verificadas con anticipación</span>
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> ficha de diagnóstico operativo departamental con las 3 tareas críticas a resolver y firma de compromiso del Protocolo Preventivo de Datos.</p>
         </div>
-
-        <h4>Rúbrica de la clase</h4>
-        <div class="rubric-item">
-          <span class="crit">Participación en el autodiagnóstico</span>
-          <span class="rubric-flow"><span class="from">No completa los 6 ámbitos</span><span class="arrow">&rarr;</span><span class="to">Completa, justifica cada calificación y propone una acción concreta para el ámbito peor calificado</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Ejecución del script en Colab</span>
-          <span class="rubric-flow"><span class="from">No logra ejecutar la celda</span><span class="arrow">&rarr;</span><span class="to">Ejecuta, modifica con sus datos y completa el reto opcional</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Actitud ante la herramienta</span>
-          <span class="rubric-flow"><span class="from">Rechaza probar sin justificación</span><span class="arrow">&rarr;</span><span class="to">Ayuda a un compañero a resolver un bloqueo técnico</span></span>
-        </div>
-
-        <h4>Notas para el facilitador</h4>
-        <p class="facilitator-note">Es normal que 1 de cada 4 participantes no haya usado nunca un notebook de código: reservar apoyo técnico dedicado sin frenar al grupo. El autodiagnóstico califica al área, no a la persona. Guardar los 6 hexágonos de esta clase como línea base para la Clase 12.</p>
       </div>
     </details>
 
-    <!-- CLASE 2 -->
+    <!-- SESIÓN 2 -->
     <details class="class-card">
       <summary>
         <span class="class-num">02</span>
         <span class="class-summary-text">
-          <span class="t">Ingeniería de prompts para la gestión pública</span>
-          <span class="m">ChatGPT &middot; Claude &middot; Gemini &middot; Eje 1</span>
+          <span class="t">Prompting institucional (Estructura RICE, Few-Shot)</span>
+          <span class="m">Gemini / Claude</span>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </summary>
       <div class="class-body">
-        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante redacta un prompt completo con la estructura RCTF (Rol, Contexto, Tarea, Formato), lo usa para producir o mejorar un documento oficial real, y lo documenta en la biblioteca de prompts de su área con al menos un marcador de variable, por ejemplo <code>[NOMBRE_SOLICITANTE]</code>.</p>
+        <p class="obj"><b>Objetivo de la sesión:</b> dominar técnicas para formular instrucciones estructuradas y precisas en documentos oficiales de uso diario, trabajando exclusivamente con marcos ficticios o publicados.</p>
 
-        <h4>Carta minuto a minuto</h4>
-        <ul class="timeline">
-          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Cada participante muestra el oficio o correo que trajo de tarea; se identifican 3 problemas comunes de redacción institucional.</span></li>
-          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Estructura RCTF: Rol, Contexto, Tarea, Formato.</span></li>
-          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador transforma un oficio genérico en un prompt RCTF en vivo y compara la salida de los tres modelos.</span></li>
-          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
-          <li><span class="time">01:25&ndash;02:45</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Taller de redacción oficial acelerada.</span></li>
-          <li><span class="time">02:45&ndash;02:55</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Cada quien sube su mejor prompt a la biblioteca compartida.</span></li>
-          <li><span class="time">02:55&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Advertencia de uso responsable y tarea: traer a la Clase 3 un tema de diagnóstico social relevante para su dirección.</span></li>
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Modelos LLM corporativos (Gemini / Claude)</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Anatomía del prompt profesional (Estructura RICE: Rol, Instrucción, Contexto, Ejemplo y Restricciones).</li>
+          <li>Razonamiento paso a paso (Chain of Thought) para evitar omisiones normativas.</li>
+          <li>Aprendizaje con ejemplos (Few-Shot Prompting) para replicar vocabulario y cortesías institucionales exactas.</li>
+          <li>Prompts iterativos para ajuste modular de textos sin reiniciar conversaciones.</li>
         </ul>
 
-        <h4>Actividad 1 &middot; Taller de redacción oficial acelerada (80 min)</h4>
-        <pre><code>Rol: Actúa como [puesto] de la Secretaría de la Juventud y la Niñez de Guerrero.
-Contexto: [resumen del caso, 2-3 líneas, sin datos identificables de menores].
-Tarea: Redacta un [oficio/respuesta/acta] que [objetivo concreto del documento].
-Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmula
-         de despedida vigente de la Secretaría.</code></pre>
-        <p style="color:var(--ink-soft);font-size:0.88rem;">Cada quien genera 2 versiones (modelos distintos) y elige la más cercana al estilo real de su área.</p>
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Redacción y calibración guiada de prompts aplicados a oficios circulares, convocatorias y tarjetas informativas, utilizando casos hipotéticos preaprobados.</p>
 
-        <h4>Actividad 2 &middot; Biblioteca de prompts reutilizables</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">Hoja compartida con columnas categoría, prompt con marcadores, modelo recomendado, autor y fecha. Categorías iniciales: oficios y comunicados oficiales; respuestas a solicitudes ciudadanas; actas y minutas de reunión; convocatorias y difusión de programas juveniles; resúmenes ejecutivos internos. Meta: 10 prompts documentados (2 por categoría) antes del cierre.</p>
-
-        <div class="callout callout--danger">
-          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 2 20h20L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <p>Ningún prompt incluye datos reales identificables de niñas, niños o adolescentes en el campo "contexto". Ningún documento generado por IA se firma sin revisión humana de nombres, cifras y fechas.</p>
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> matriz departamental de prompts institucionales estandarizados para trámites recurrentes.</p>
         </div>
-
-        <h4>Materiales</h4>
-        <div class="tag-list">
-          <span class="tag-pill">Documento real de tarea (o caso de respaldo)</span>
-          <span class="tag-pill">Plantilla RCTF</span>
-          <span class="tag-pill">Hoja de cálculo compartida con permisos de edición</span>
-        </div>
-
-        <h4>Rúbrica de la clase</h4>
-        <div class="rubric-item">
-          <span class="crit">Estructura del prompt</span>
-          <span class="rubric-flow"><span class="from">RCTF incompleto</span><span class="arrow">&rarr;</span><span class="to">RCTF completo y ajustado al modelo</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Calidad del documento resultante</span>
-          <span class="rubric-flow"><span class="from">Requiere reescritura</span><span class="arrow">&rarr;</span><span class="to">Listo para firma sin cambios de fondo</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Aporte a la biblioteca compartida</span>
-          <span class="rubric-flow"><span class="from">Ningún prompt documentado</span><span class="arrow">&rarr;</span><span class="to">Más de un prompt, en más de una categoría</span></span>
-        </div>
-
-        <h4>Notas para el facilitador</h4>
-        <p class="facilitator-note">Tener 3 casos de respaldo listos. Vigilar que nadie copie párrafos completos de un expediente real con nombres de menores en el campo de contexto: es el primer punto de fuga de datos del programa. Designar a alguien del área como responsable de mantener la biblioteca después del curso.</p>
       </div>
     </details>
 
-    <!-- CLASE 3 -->
+    <!-- SESIÓN 3 -->
     <details class="class-card">
       <summary>
         <span class="class-num">03</span>
         <span class="class-summary-text">
-          <span class="t">Selección especializada de modelos e investigación profunda</span>
-          <span class="m">Perplexity &middot; Claude &middot; Gemini Pro &middot; Eje 2</span>
+          <span class="t">Análisis normativo y fuentes cerradas con Google NotebookLM</span>
+          <span class="m">Google NotebookLM + Gemini</span>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </summary>
       <div class="class-body">
-        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante compara al menos dos modelos en una misma tarea de investigación usando cinco criterios objetivos, y produce un párrafo de diagnóstico social con al menos dos fuentes primarias verificadas de forma cruzada.</p>
+        <p class="obj"><b>Objetivo de la sesión:</b> consultar leyes estatales, manuales de organización y reglas de operación en PDF sin margen de error ni alucinaciones, obteniendo respuestas sustentadas con citas exactas a la fuente original y sin costo de suscripción.</p>
 
-        <h4>Carta minuto a minuto</h4>
-        <ul class="timeline">
-          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Se muestra una cifra "citada" por un modelo en una respuesta previa y se pregunta cómo comprobarla.</span></li>
-          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Diferencia entre modelo conversacional general, motor de investigación con citación (Perplexity) y modelo de razonamiento extendido; cuándo usar cada uno.</span></li>
-          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">Misma pregunta de investigación a los tres motores, cuadro de benchmarking llenado en vivo.</span></li>
-          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
-          <li><span class="time">01:25&ndash;02:15</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Benchmarking entre modelos.</span></li>
-          <li><span class="time">02:15&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Búsqueda asistida de diagnóstico social con verificación cruzada.</span></li>
-          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Autoevaluación y tarea: identificar un formulario o reporte de su área que reciba datos ciudadanos, para la Clase 5.</span></li>
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Google NotebookLM</span><span class="tag-pill">Google Gemini</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Principio de fuente cerrada (grounding): restricción absoluta al material documental cargado.</li>
+          <li>Indexación de archivos oficiales públicos (Ley de Juventud de Guerrero, Reglas de Operación y acuerdos del Periódico Oficial).</li>
+          <li>Verificación documental mediante citas automáticas a artículos, párrafos y páginas específicas.</li>
         </ul>
 
-        <h4>Actividad 1 &middot; Benchmarking entre modelos (50 min)</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">Sobre un mismo tema (por ejemplo, empleabilidad y primer empleo juvenil en Guerrero), cada participante hace la misma pregunta a dos motores y llena un cuadro con 5 criterios: cita fuentes explícitas y verificables; actualidad de la información; profundidad del análisis (no solo lista datos); presencia de generalización sin evidencia; tiempo y facilidad de uso.</p>
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Crear un cuaderno temático en NotebookLM, indexar el marco normativo del área y realizar consultas complejas de elegibilidad verificando las citas generadas contra el PDF fuente.</p>
 
-        <h4>Actividad 2 &middot; Diagnóstico social con fuentes citadas (35 min)</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">Usando Perplexity (o Claude / Gemini en modo investigación), cada participante redacta un párrafo de diagnóstico sobre el tema de su dirección aplicando el protocolo: pedir que cite explícitamente cada fuente (INEGI, CONEVAL, IMJUVE, Secretaría del Trabajo, etc.), abrir al menos 2 fuentes de forma independiente y confirmar el dato, y marcar y descartar cualquier cifra no verificable en fuente primaria.</p>
-
-        <h4>Materiales</h4>
-        <div class="tag-list">
-          <span class="tag-pill">Tema de diagnóstico social de tarea (o de respaldo)</span>
-          <span class="tag-pill">Formato del cuadro de benchmarking</span>
-          <span class="tag-pill">Acceso a los tres motores con investigación activada</span>
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> cuaderno normativo digital activo con manuales indexados y reporte de consulta con citas verificadas.</p>
         </div>
-
-        <h4>Rúbrica de la clase</h4>
-        <div class="rubric-item">
-          <span class="crit">Comparación entre modelos</span>
-          <span class="rubric-flow"><span class="from">Un solo motor</span><span class="arrow">&rarr;</span><span class="to">Prueba un tercero por iniciativa propia</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Verificación de fuentes</span>
-          <span class="rubric-flow"><span class="from">Ninguna verificación</span><span class="arrow">&rarr;</span><span class="to">Descarta explícitamente una cifra no verificable</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Calidad del párrafo de diagnóstico</span>
-          <span class="rubric-flow"><span class="from">Copia sin editar</span><span class="arrow">&rarr;</span><span class="to">Incluye una limitación o sesgo detectado en la fuente</span></span>
-        </div>
-
-        <h4>Notas para el facilitador</h4>
-        <p class="facilitator-note">Elegir 2&ndash;3 temas de respaldo con datos públicos reales de antemano. Perplexity y los modos de investigación pueden tardar 30&ndash;60 segundos por consulta: avisar al grupo. Cerrar subrayando que este protocolo de verificación es el mismo que se audita en la Clase 4.</p>
       </div>
     </details>
 
-    <!-- CLASE 4 -->
+    <!-- SESIÓN 4 -->
     <details class="class-card">
       <summary>
         <span class="class-num">04</span>
         <span class="class-summary-text">
-          <span class="t">Ética pública, ciberseguridad y manejo de riesgos</span>
-          <span class="m">Checklists de auditoría &middot; Eje 3</span>
+          <span class="t">Co-creación y edición de documentos oficiales con Gemini Canvas</span>
+          <span class="m">Gemini Canvas + Google Docs</span>
         </span>
         <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </summary>
       <div class="class-body">
-        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante identifica al menos 3 tipos de error en un texto generado por IA usando un checklist de auditoría, y clasifica correctamente los datos de un caso real de su área según el nivel de resguardo del marco normativo.</p>
+        <p class="obj"><b>Objetivo de la sesión:</b> dominar el espacio de trabajo interactivo de Gemini Canvas para redactar, editar por bloques, ajustar tonos de comunicación y exportar documentos institucionales directamente a Google Docs.</p>
 
-        <h4>Carta minuto a minuto</h4>
-        <ul class="timeline">
-          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Caso real y público de una alucinación de IA con consecuencia institucional.</span></li>
-          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Tipos de alucinación (cifra inventada, cita inexistente, fecha incorrecta, generalización sin evidencia); marco normativo aplicable a datos de niñez.</span></li>
-          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador audita en vivo un texto con 4 errores intencionales.</span></li>
-          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
-          <li><span class="time">01:25&ndash;02:10</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Auditoría crítica de alucinaciones, en parejas.</span></li>
-          <li><span class="time">02:10&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Aplicación del protocolo de resguardo de datos a un caso real del propio escritorio.</span></li>
-          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Entrega del protocolo aplicado; cierre de Mes 1.</span></li>
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Google Gemini (Modo Canvas)</span><span class="tag-pill">Google Docs</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Diferencias entre chat lineal tradicional y espacios dinámicos en Canvas.</li>
+          <li>Edición quirúrgica: seleccionar párrafos para sintetizar, expandir o cambiar tono institucional sin alterar el resto del texto.</li>
+          <li>Conversión rápida de cronogramas en tablas estructuradas y control de versiones.</li>
         </ul>
 
-        <h4>Actividad 1 &middot; Auditoría crítica de alucinaciones (45 min)</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">En parejas, revisan un texto generado por IA (con errores insertados a propósito) con este checklist: ¿la fuente citada existe y dice lo que el texto afirma? ¿La cifra es verificable en fuente primaria? ¿El texto generaliza sin evidencia? ¿Hay fechas o nombres inconsistentes entre sí? ¿El tono es apropiado para una comunicación oficial? Meta: encontrar al menos 3 de los 4 errores insertados.</p>
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Construir una ficha técnica o propuesta de convenio en Canvas, reescribiendo bloques específicos con herramientas nativas y estructurando el plan de actividades en una tabla para exportación final.</p>
 
-        <h4>Actividad 2 &middot; Protocolo de resguardo de datos (40 min)</h4>
-        <p style="color:var(--ink-soft);font-size:0.92rem;">Cada participante toma un caso real de su escritorio y aplica seis pasos: clasificar cada dato (público, confidencial, sensible); verificar si algún dato identifica directa o indirectamente a un menor; decidir si el caso puede procesarse en una IA en la nube o requiere anonimización previa; marcar qué campos deben enmascararse si aplica; registrar el caso en la bitácora de tratamiento del área; marcar para consulta jurídica ante cualquier duda.</p>
-
-        <h4>Materiales</h4>
-        <div class="tag-list">
-          <span class="tag-pill">2 textos con errores insertados (preparados con anticipación)</span>
-          <span class="tag-pill">Checklist de auditoría</span>
-          <span class="tag-pill">Formato de protocolo y bitácora de tratamiento</span>
-          <span class="tag-pill">Resumen de una página del marco normativo</span>
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> documento institucional final (convenio o ficha técnica) estructurado en Canvas y exportado a Google Docs.</p>
         </div>
-
-        <h4>Rúbrica de la clase</h4>
-        <div class="rubric-item">
-          <span class="crit">Detección de alucinaciones</span>
-          <span class="rubric-flow"><span class="from">0&ndash;1 errores</span><span class="arrow">&rarr;</span><span class="to">Los 4 errores, con explicación del riesgo en cada uno</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Clasificación de datos del caso propio</span>
-          <span class="rubric-flow"><span class="from">No distingue dato sensible</span><span class="arrow">&rarr;</span><span class="to">Identifica un dato indirecto no señalado por el facilitador</span></span>
-        </div>
-        <div class="rubric-item">
-          <span class="crit">Aplicación del protocolo completo</span>
-          <span class="rubric-flow"><span class="from">Menos de 3 pasos</span><span class="arrow">&rarr;</span><span class="to">Los 6 pasos, más un caso límite marcado para consulta jurídica</span></span>
-        </div>
-
-        <div class="callout callout--danger">
-          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 2 20h20L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <p>Si un caso real de un participante contiene datos de un menor, trabajar solo con descripción verbal: el dato real no se proyecta ni se comparte en pantalla.</p>
-        </div>
-
-        <h4>Notas para el facilitador</h4>
-        <p class="facilitator-note">Preparar los textos con errores con 48 horas de anticipación, idealmente revisados por un segundo facilitador. Esta clase cierra el Mes 1: recoger retroalimentación del grupo antes de entrar a Mes 2.</p>
       </div>
     </details>
     </div>
   </div>
 
-  <div class="section anchor-target" id="mes2-cartas">
+  <!-- ============ MÓDULO 2 ============ -->
+  <div class="section anchor-target" id="modulo-2">
     <div class="section-head">
-      <span class="eyebrow">Mes 2 &middot; Datos y protección de la niñez</span>
-      <h2>Clases 05 a 08</h2>
-      <p>Carta descriptiva pendiente de desarrollo al mismo nivel de detalle que el Mes 1. Tema, herramientas y producto ya definidos en el cronograma general.</p>
+      <span class="eyebrow">Módulo 2 &middot; Sesiones 5 a 8</span>
+      <h2>Inteligencia de datos, monitoreo social y difusión institucional</h2>
+      <p>Objetivo, herramientas, contenido clave, actividad práctica y entregable de cada sesión.</p>
     </div>
-    <div class="grid grid-2">
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">05 &middot; Calidad de datos y fuentes abiertas gubernamentales</span>
-        <span class="m">Colab, Python / Pandas, CSV / Excel &middot; producto: análisis exploratorio de solicitudes comunitarias</span>
+
+    <div class="accordion-group">
+    <!-- SESIÓN 5 -->
+    <details class="class-card" open>
+      <summary>
+        <span class="class-num m2">05</span>
+        <span class="class-summary-text">
+          <span class="t">Marco de seguridad y gobernanza de datos</span>
+          <span class="m">Paneles de privacidad + Sheets / Excel local</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> dominar la técnica de disociación y anonimización de bases de datos para auditar padrones de beneficiarios en herramientas de inteligencia artificial sin vulnerar la legislación de protección de datos personales.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Paneles de configuración de privacidad</span><span class="tag-pill">Hojas de cálculo locales (Excel / Google Sheets)</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Marco normativo del ITAIGro sobre el tratamiento legal de datos sensibles (CURP, domicilios, salud y datos de menores de edad).</li>
+          <li>Protocolos técnicos: desactivación de historiales y bloqueo del reentrenamiento de modelos comerciales.</li>
+          <li>Técnica de anonimización: separación local de variables de identidad mediante claves numéricas y resguardo de la "llave maestra" en equipos locales protegidos.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Auditoría individual de cuentas institucionales; ejercicio práctico de desinfección de un padrón de beneficiarios sustituyendo nombres por claves (<code>BENEFICIARIO_001</code>); dinámica "Semáforo del ITAIGro" para clasificar información pública, anonimizable y estrictamente confidencial.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregables:</b> cuenta institucional blindada y verificada, base de datos simulada desinfectada en local, y matriz de clasificación rápida de datos para escritorio.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">06 &middot; Consultas en lenguaje natural a bases de datos</span>
-        <span class="m">Pandas SQL, ChatGPT, Matplotlib &middot; producto: consultas priorizadas + gráficos estadísticos</span>
+    </details>
+
+    <!-- SESIÓN 6 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m2">06</span>
+        <span class="class-summary-text">
+          <span class="t">Auditoría de padrones, análisis de datos y reportes ejecutivos</span>
+          <span class="m">Claude Analysis Tool / Gemini</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> cargar y analizar padrones de beneficiarios (previamente anonimizados) mediante lenguaje natural para detectar anomalías de captura y transformar cifras numéricas en reportes ejecutivos.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Claude Analysis Tool</span><span class="tag-pill">Google Gemini / Advanced Data Analysis</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Consulta y cruce de variables en hojas de cálculo (.xlsx / .csv) sin fórmulas complejas.</li>
+          <li>Detección automática de inconsistencias operativas: registros duplicados, edades fuera del rango legal de juventud (12 a 29 años) y errores de captura en municipios.</li>
+          <li>Conversión de matrices cuantitativas en narrativa para rendición de cuentas y avances mensuales.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Subir un padrón de prueba desinfectado, solicitar la detección y corrección de inconsistencias, extraer la segmentación por género y regiones de Guerrero, y redactar un informe narrativo de tres párrafos para la Dirección de Planeación.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> padrón auditado y corregido, acompañado de un informe ejecutivo de una cuartilla con métricas clave para el reporte mensual.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">07 &middot; Anonimización y protección de datos personales (PII)</span>
-        <span class="m">Regex, Faker, spaCy, Presidio &middot; producto: pipeline de anonimización de expedientes de menores</span>
+    </details>
+
+    <!-- SESIÓN 7 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m2">07</span>
+        <span class="class-summary-text">
+          <span class="t">Monitoreo estratégico con Grok concentrador y difusión multicanal</span>
+          <span class="m">Grok institucional + Gemini / Claude</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> rastrear problemáticas y tendencias juveniles en tiempo real mediante búsquedas institucionales centralizadas en Grok, y transformar convocatorias complejas en campañas de difusión ágiles y multicanal.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Grok (cuenta institucional concentradora)</span><span class="tag-pill">Google Gemini / Claude</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Dinámica de consulta concentrada: uso eficiente de Grok para rastrear temas emergentes, inquietudes y quejas de la juventud guerrerense sin multiplicar costos de cuentas individuales.</li>
+          <li>Simplificación de lenguaje burocrático a mensajes directos.</li>
+          <li>Formatos de difusión multicanal: listas de WhatsApp Comunitario, publicaciones en redes y guiones de video corto (TikTok / Reels).</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Consultar en vivo las principales inquietudes ciudadanas sobre apoyos y talleres juveniles; tomar una convocatoria oficial de varias páginas y generar el paquete integral de difusión (mensaje para enlaces municipales, guion de 30 segundos y batería de 5 preguntas frecuentes).</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> kit de difusión multicanal de una convocatoria oficial, listo para publicarse en redes y distribuirse con enlaces municipales.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">08 &middot; Informes ejecutivos y diagnósticos sociales</span>
-        <span class="m">Perplexity, ChatGPT, Gemini Pro &middot; producto: informe ejecutivo de gestión de 1 página</span>
+    </details>
+
+    <!-- SESIÓN 8 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m2">08</span>
+        <span class="class-summary-text">
+          <span class="t">Registro digital en territorio: códigos QR, modo offline y rescate por lotes</span>
+          <span class="m">Google Forms + Sheets + Gemini (OCR)</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> erradicar las listas de asistencia en papel mediante formularios móviles con validación automática, integrando protocolos de captura sin conexión a internet y digitalización rápida de contingencia.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Google Forms</span><span class="tag-pill">Google Sheets</span><span class="tag-pill">Cámara móvil / Gemini (OCR)</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Diseño de formularios institucionales con validaciones estrictas para evitar errores de captura en campo.</li>
+          <li>Generación de códigos QR de acceso rápido.</li>
+          <li>Estrategia de territorio: formularios configurados para trabajo offline en municipios con baja cobertura celular.</li>
+          <li>Protocolo de contingencia por lotes: digitalización rápida de listas físicas mediante captura fotográfica y procesamiento OCR con IA, para evitar transcripciones manuales.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Diseñar el formulario de registro para un evento regional de SEJUVE; simular una caída de red ejecutando la captura en modo sin conexión, y procesar una lista de contingencia física fotografiada para convertirla automáticamente en una tabla limpia de Sheets.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> formulario institucional publicado con código QR, protocolo offline habilitado y hoja de cálculo receptora vinculada.</p>
+        </div>
       </div>
+    </details>
     </div>
   </div>
 
-  <div class="section anchor-target" id="mes3-cartas">
+  <!-- ============ MÓDULO 3 ============ -->
+  <div class="section anchor-target" id="modulo-3">
     <div class="section-head">
-      <span class="eyebrow">Mes 3 &middot; Automatización operativa</span>
-      <h2>Clases 09 a 12</h2>
-      <p>Carta descriptiva pendiente de desarrollo. La Clase 12 cierra el programa con la sustentación del proyecto integrador.</p>
+      <span class="eyebrow">Módulo 3 &middot; Sesiones 9 a 12</span>
+      <h2>Automatización de flujos institucionales, atención ciudadana y asistentes de gestión</h2>
+      <p>Objetivo, herramientas, contenido clave, actividad práctica y entregable de cada sesión.</p>
     </div>
-    <div class="grid grid-2">
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">09 &middot; Automatización No-Code / Low-Code y lógica de flujos</span>
-        <span class="m">Make, Power Automate, Zapier &middot; producto: flujo No-Code de recepción de solicitudes</span>
+
+    <div class="accordion-group">
+    <!-- SESIÓN 9 -->
+    <details class="class-card" open>
+      <summary>
+        <span class="class-num m3">09</span>
+        <span class="class-summary-text">
+          <span class="t">Asistentes institucionales con base de conocimiento</span>
+          <span class="m">Google Gems / NotebookLM compartido</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> construir un asistente conversacional provisto de manuales y normativas cerradas, aprovechando las herramientas integradas en Google Workspace (Gems o NotebookLM corporativo).</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Google Gems (en Workspace)</span><span class="tag-pill">Google NotebookLM compartido</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Funcionamiento de un agente basado en fuentes cerradas.</li>
+          <li>Carga de manuales de organización, trámites de la secretaría y lineamientos operativos de Guerrero.</li>
+          <li>Instrucciones de sistema: asignación de rol institucional, directrices de neutralidad gubernamental y restricción para citar artículos específicos sin alucinar.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Desarrollar el "Asistente de Inducción y Trámites de SEJUVE": los participantes configuran las directrices de atención, cargan los lineamientos vigentes y someten el asistente a pruebas de consulta cruzada entre diferentes direcciones para comprobar la fidelidad de las fuentes.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> asistente digital funcional desplegado en el entorno institucional, con base documental cargada y calibrada.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">10 &middot; Integración institucional, alertas y correos automáticos</span>
-        <span class="m">Power Automate / Make + Outlook / Gmail, Teams, Sheets &middot; producto: reportes automáticos y alertas prioritarias</span>
+    </details>
+
+    <!-- SESIÓN 10 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m3">10</span>
+        <span class="class-summary-text">
+          <span class="t">Automatización básica I: acuses automáticos y archivo digital en Make</span>
+          <span class="m">Make + Sheets + Gmail + Drive</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> vincular el formulario territorial de la Sesión 8 con Google Sheets, Gmail y Drive mediante Make para emitir acuses inmediatos y archivar anexos de forma desasistida, controlando el consumo de operaciones de la cuenta gratuita.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Make (cuenta básica gratuita)</span><span class="tag-pill">Google Sheets</span><span class="tag-pill">Gmail</span><span class="tag-pill">Google Drive</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Principios de lógica no-code: disparador (trigger) y acciones directas.</li>
+          <li>Mapeo de datos dinámicos (folios, nombres y correos institucionales).</li>
+          <li>Emisión instantánea de acuses de recibo foliados.</li>
+          <li>Descarga y archivo automático de comprobantes en carpetas compartidas de Drive.</li>
+          <li>Gestión de cuota: filtros configurados para no rebasar el límite mensual gratuito de operaciones en Make.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Construir la primera fase del Flujo Continuo SEJUVE: conectar la hoja receptora de registros para que, al ingresar una solicitud, el sistema emita un acuse formal con número de folio y resguarde los comprobantes adjuntos en una carpeta mensual de Drive.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregables:</b> escenario lineal activo en Make funcionando, y plantilla oficial de acuse institucional configurada dentro de los límites de la cuenta gratuita.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">11 &middot; Presentaciones ejecutivas visuales de alto impacto</span>
-        <span class="m">Gamma, Canva IA, python-pptx &middot; producto: deck generado + script confidencial en python-pptx</span>
+    </details>
+
+    <!-- SESIÓN 11 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m3">11</span>
+        <span class="class-summary-text">
+          <span class="t">Automatización básica II: cierre de ciclo con emisión masiva de constancias en PDF</span>
+          <span class="m">Make + Sheets + Docs + Gmail</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> completar el flujo institucional conectando la base de participantes acreditados con plantillas oficiales en Google Docs, para generar y despachar constancias o certificados en PDF de forma automática.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Make</span><span class="tag-pill">Google Sheets</span><span class="tag-pill">Google Docs</span><span class="tag-pill">Gmail</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Mapeo de variables dinámicas (<code>{{Nombre}}</code>, <code>{{Folio}}</code>, <code>{{Municipio}}</code>) en plantillas oficiales membretadas.</li>
+          <li>Conversión desasistida de documentos de texto a formato PDF en Google Drive.</li>
+          <li>Envío automático por correo electrónico con archivo adjunto personalizado.</li>
+          <li>Supervisión de ejecuciones y control de errores por correos inválidos.</li>
+        </ul>
+
+        <h4>Actividad práctica</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Completar la fase final del Flujo Continuo SEJUVE: vincular el padrón del evento (Sesiones 8 y 10) para que, al marcar la casilla de acreditado en Google Sheets, Make genere automáticamente la constancia foliada en PDF y la despache al correo del beneficiario.</p>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregable:</b> escenario funcional en Make configurado para la emisión masiva y despacho de documentos institucionales en PDF, sin intervención manual.</p>
+        </div>
       </div>
-      <div class="pending-card">
-        <span class="pending-flag">Pendiente</span>
-        <span class="t">12 &middot; Proyecto integrador y certificación</span>
-        <span class="m">Ecosistema completo &middot; producto: sustentación del proyecto integrador por área</span>
+    </details>
+
+    <!-- SESIÓN 12 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num m3">12</span>
+        <span class="class-summary-text">
+          <span class="t">Evaluación de impacto institucional, métricas de ahorro y relevo operativo</span>
+          <span class="m">Sheets + Gamma / Slides + Drive</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de la sesión:</b> cuantificar el ahorro en horas de trabajo logrado a lo largo del programa, documentar la solución técnica en una carpeta compartida y defender la viabilidad institucional ante la titular y directores de SEJUVE, para asegurar su continuidad administrativa.</p>
+
+        <h4>Herramientas</h4>
+        <div class="tag-list"><span class="tag-pill">Plantilla de métricas en Google Sheets</span><span class="tag-pill">Gamma (o Google Slides)</span><span class="tag-pill">Carpeta compartida institucional de Drive</span></div>
+
+        <h4>Contenido clave</h4>
+        <ul class="content-list">
+          <li>Indicadores de eficiencia operativa pública (KPIs): horas-hombre recuperadas al mes, reducción de tiempos de atención ciudadana y abatimiento de errores de captura.</li>
+          <li>Estructura de defensa ejecutiva ante gabinete: diagnóstico inicial, solución técnica, candados del ITAIGro y resultados cuantificables.</li>
+          <li>Manual de Relevo Administrativo: documentación mínima para que el flujo opere de forma independiente a la persona en turno.</li>
+        </ul>
+
+        <h4>Actividad práctica &middot; "Panel de Validación y Relevo Operativo"</h4>
+        <ul class="content-list">
+          <li><b>Cálculo de impacto:</b> registro de tiempos previos frente al proceso automatizado ("Antes vs. Después") para calcular las horas mensuales liberadas por departamento.</li>
+          <li><b>Resistencia normativa:</b> ronda de preguntas donde los participantes defienden sus candados de seguridad y privacidad ante objeciones simuladas de auditoría interna.</li>
+          <li><b>Demostración en vivo:</b> ejecución de 3 minutos del Flujo Continuo SEJUVE (registro, acuse y emisión de constancia) frente al grupo.</li>
+        </ul>
+
+        <div class="callout callout--safe" style="margin-top:18px;">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Entregables:</b> matriz departamental de horas laborales ahorradas y presentación ejecutiva de resultados; ficha técnica de relevo administrativo (1 cuartilla) con enlaces a los escenarios de Make, rutas de carpetas institucionales en Drive, cuentas responsables y guía básica de solución de errores.</p>
+        </div>
       </div>
+    </details>
     </div>
   </div>
 </section>
 
-<!-- ================= TAB 3: EVALUACIÓN Y NORMATIVA ================= -->
+<!-- ================= TAB 3: GOBERNANZA Y PRESUPUESTO ================= -->
 <section class="tab-panel" id="panel-evaluacion" role="tabpanel" hidden>
 
   <div class="section">
     <div class="section-head">
-      <h2>Rúbrica transversal de evaluación</h2>
-      <p>Base común de las 12 clases. Cada carta descriptiva instancia 3 o 4 de estas cinco dimensiones con un producto concreto; la Clase 12 las pondera todas para la certificación.</p>
+      <h2>Criterios de acreditación</h2>
+      <p>Requisitos de cierre definidos en la ficha técnica del programa.</p>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Dimensión</th><th>1 &middot; Incipiente</th><th>2 &middot; En desarrollo</th><th>3 &middot; Logrado</th><th>4 &middot; Destacado</th></tr></thead>
-        <tbody>
-          <tr>
-            <td class="strong">Comprensión conceptual</td>
-            <td>No distingue el concepto de la clase de un uso genérico de IA.</td>
-            <td>Repite la definición pero no la aplica a su propio trabajo.</td>
-            <td>Explica el concepto con un ejemplo de su propia área.</td>
-            <td>Lo explica y anticipa cuándo NO conviene aplicarlo.</td>
-          </tr>
-          <tr>
-            <td class="strong">Aplicación con herramientas de IA</td>
-            <td>Necesita guía paso a paso para reproducir la demostración.</td>
-            <td>Reproduce el ejercicio con apoyo puntual del facilitador.</td>
-            <td>Completa el ejercicio de forma autónoma en el tiempo previsto.</td>
-            <td>Lo adapta a un segundo caso propio, sin pedirlo.</td>
-          </tr>
-          <tr>
-            <td class="strong">Calidad del entregable</td>
-            <td>Incompleto o con errores que impiden su uso.</td>
-            <td>Completo, con imprecisiones menores.</td>
-            <td>Correcto, claro y utilizable en el trabajo real.</td>
-            <td>Listo para reutilizarse como plantilla del área.</td>
-          </tr>
-          <tr>
-            <td class="strong">Juicio ético y protección de datos</td>
-            <td>Introduce datos identificables de menores u otros datos sensibles sin advertirlo.</td>
-            <td>Identifica el riesgo solo cuando se le señala.</td>
-            <td>Identifica y mitiga el riesgo por iniciativa propia.</td>
-            <td>Señala también riesgos en el trabajo de otros compañeros.</td>
-          </tr>
-          <tr>
-            <td class="strong">Autonomía y transferencia</td>
-            <td>El ejercicio queda aislado de su trabajo cotidiano.</td>
-            <td>Ve la utilidad pero no ha planeado cuándo usarlo.</td>
-            <td>Define una tarea concreta de su semana donde lo aplicará.</td>
-            <td>Ya lo aplicó a un caso real antes de la siguiente sesión.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:14px;font-size:0.85rem;color:var(--ink-faint);font-family:var(--font-mono);">Escala sugerida de conversión: Incipiente = 60 &middot; En desarrollo = 75 &middot; Logrado = 90 &middot; Destacado = 100 (sobre 100 puntos por dimensión evaluada).</p>
+    <ul class="check-list">
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Asistencia mínima del 80% a las 12 sesiones presenciales.</span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Entrega del expediente operativo completo: los 12 productos aplicados de cada sesión.</span></li>
+    </ul>
   </div>
 
   <div class="section section-dark">
     <div class="section-head">
-      <h2>Certificación final</h2>
+      <h2>Gobernanza y privacidad (ITAIGro)</h2>
+      <p>El programa opera bajo los Lineamientos de Protección de Datos Personales del Instituto de Transparencia, Acceso a la Información y Protección de Datos Personales del Estado de Guerrero.</p>
     </div>
-    <ul class="check-list">
-      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Asistencia mínima del 80% (10 de 12 clases).</span></li>
-      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Proyecto integrador presentado y sustentado en la Clase 12, combinando al menos 3 de los 4 ejes.</span></li>
-      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Calificación ponderada mínima de 70/100 (rúbrica transversal 40% + rúbrica del proyecto integrador 60%).</span></li>
-      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin incidentes de manejo de datos durante el curso.</span></li>
-    </ul>
-
-    <div class="tier-row" style="margin-top:22px;">
-      <div class="tier-card t1"><span class="range">70&ndash;79</span><div class="lvl">Constancia de participación</div></div>
-      <div class="tier-card t2"><span class="range">80&ndash;89</span><div class="lvl">Constancia de competencia intermedia</div></div>
-      <div class="tier-card t3"><span class="range">90&ndash;100</span><div class="lvl">Constancia de competencia destacada</div></div>
-    </div>
-    <p style="margin-top:12px;font-size:0.88rem;color:var(--ink-soft);">Todas las constancias tienen valor curricular institucional en el expediente de SEJUVE.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-head">
-      <h2>Marco normativo de referencia</h2>
-      <p>Orienta el Eje 3 del programa (Clases 4 y 7). No sustituye una opinión del área jurídica de la Secretaría.</p>
-    </div>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>LGPDPPSO</h3>
-        <p>Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados: ley marco que rige a toda dependencia estatal, SEJUVE incluida, en el tratamiento de datos personales.</p>
+    <div class="spotlight" style="background:linear-gradient(135deg, var(--berry), var(--berry-strong));box-shadow:0 28px 56px -22px rgba(114,60,43,0.55);">
+      <span class="icon-badge on-primary" aria-hidden="true" style="background:rgba(255,255,255,0.16);color:#fff;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <div>
+        <span class="spotlight-eyebrow">Prohibición estricta</span>
+        <p>Ingresar datos personales directos (CURP, domicilios particulares, estados de salud, números de contacto o expedientes de menores de edad) a plataformas externas o comerciales de inteligencia artificial. Todo padrón de beneficiarios y base de datos institucional debe someterse a la técnica de disociación y anonimización numérica en local (<code style="background:rgba(255,255,255,0.16);color:#fff;">BENEFICIARIO_001</code>) antes de cualquier procesamiento asistido por modelos de lenguaje o análisis estadístico.</p>
       </div>
-      <div class="card">
-        <h3>LGDNNA</h3>
-        <p>Ley General de los Derechos de Niñas, Niños y Adolescentes: fija el principio de interés superior de la niñez y exige medidas reforzadas de protección cuando el dato identifica a una persona menor de edad.</p>
-      </div>
-    </div>
-    <div class="callout callout--warn" style="margin-top:16px;">
-      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
-      <p><b>Autoridad garante vigente:</b> el Instituto Nacional de Transparencia (INAI) fue extinguido en 2025; sus funciones fueron reasignadas a nivel federal a la Secretaría Anticorrupción y Buen Gobierno. Se recomienda confirmar con el área jurídica de SEJUVE el nombre y contacto vigentes del órgano garante estatal antes de publicar este marco como protocolo oficial.</p>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head">
-      <h2>Categorías de dato a vigilar</h2>
+      <h2>Semáforo del ITAIGro: clasificación de datos</h2>
+      <p>Dinámica introducida en la Sesión 5 para decidir, ante cualquier dato, si puede procesarse en una herramienta de IA en la nube.</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Categoría</th><th>Ejemplos en SEJUVE</th><th>Nivel de resguardo</th></tr></thead>
+        <thead><tr><th>Categoría</th><th>Ejemplos en SEJUVE</th><th>Tratamiento</th></tr></thead>
         <tbody>
-          <tr><td class="strong">Identificación directa</td><td>Nombre completo, CURP, fecha de nacimiento</td><td><span class="pill" data-level="confidencial">Confidencial</span></td></tr>
-          <tr><td class="strong">Identificación indirecta</td><td>Dirección, escuela, nombre de madre / padre / tutor</td><td><span class="pill" data-level="confidencial">Confidencial</span></td></tr>
-          <tr><td class="strong">Datos sensibles</td><td>Condición de salud, situación familiar o de tutela, fotografía o video</td><td><span class="pill" data-level="sensible">Sensible &middot; máximo resguardo</span></td></tr>
-          <tr><td class="strong">Dato agregado o anonimizado</td><td>Conteos por municipio, rangos de edad, porcentajes</td><td><span class="pill" data-level="libre">Uso libre en IA en la nube</span></td></tr>
+          <tr><td class="strong">Confidencial / prohibida</td><td>Nombres de menores, CURP, domicilios, condición de salud, convenios en borrador</td><td><span class="pill" data-level="sensible">Nunca a IA externa</span></td></tr>
+          <tr><td class="strong">Anonimizable</td><td>Padrones de beneficiarios con identidad sustituible por clave numérica (BENEFICIARIO_001)</td><td><span class="pill" data-level="confidencial">Solo tras disociación local</span></td></tr>
+          <tr><td class="strong">Pública / agregada</td><td>Conteos por municipio, rangos de edad, porcentajes, convocatorias publicadas</td><td><span class="pill" data-level="libre">Uso libre en IA institucional</span></td></tr>
         </tbody>
       </table>
     </div>
+  </div>
 
-    <div class="spotlight" style="margin-top:18px;">
-      <span class="icon-badge on-primary" aria-hidden="true" style="background:rgba(255,255,255,0.16);color:#fff;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-      <div>
-        <span class="spotlight-eyebrow">Regla de oro del programa</span>
-        <p>Ningún dato de identificación directa o indirecta de una persona menor de edad se sube a una herramienta de IA en la nube sin haber pasado antes por el pipeline de anonimización de la Clase 7.</p>
+  <div class="section section-dark">
+    <div class="section-head">
+      <h2>Sostenibilidad financiera y despliegue de herramientas</h2>
+      <p>Modelo de gasto mínimo concentrado: descarta la compra de licencias individuales para el personal.</p>
+    </div>
+    <div class="tier-row">
+      <div class="tier-card t1">
+        <span class="range">$0</span>
+        <div class="lvl">Capa operativa general</div>
+        <p>Personal administrativo y operativo trabaja con las herramientas ya integradas en el dominio institucional: Gemini Web en entorno protegido de privacidad empresarial, y Google NotebookLM para análisis normativo en PDF.</p>
       </div>
+      <div class="tier-card t2">
+        <span class="range">$30&ndash;45<span style="font-size:.9rem;">/mes</span></span>
+        <div class="lvl">Make (Plan Core)</div>
+        <p>Presupuesto concentrado de la Secretaría. Garantiza hasta 10,000 operaciones al mes para automatizar recepción de trámites, emisión de acuses con folio y despacho masivo de constancias en PDF sin bloqueos por límite de cuota.</p>
+      </div>
+      <div class="tier-card t3">
+        <span class="range">~$10<span style="font-size:.9rem;">/mes</span></span>
+        <div class="lvl">xAI Grok (despliegue dual)</div>
+        <p>Clave técnica (API) vinculada a Make con saldo prepagado, para clasificación y turnado de peticiones desde Sheets sin cuentas individuales; complementada por una cuenta web centralizada en Comunicación Social / Despacho para monitoreo de tendencias.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Resguardo y relevo administrativo</h2>
+    </div>
+    <div class="callout callout--warn">
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+      <p>Todos los formularios de registro territorial, bases de cálculo, plantillas oficiales, escenarios de automatización en Make y manuales de procedimiento deben radicarse formalmente en una Unidad Compartida (Shared Drive) vinculada a cuentas institucionales de la SEJUVE. Ningún flujo ni asistente dependerá de correos o cuentas particulares, garantizando la continuidad operativa del sistema ante rotaciones de personal o transiciones de administración.</p>
     </div>
   </div>
 
@@ -1140,8 +1263,38 @@ Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmul
 
 <footer>
   <div class="shell">
-    <span>Guía del facilitador &middot; Secretaría de la Juventud y la Niñez del Estado de Guerrero</span>
-    <span>Mes 1 desarrollado a detalle &middot; Mes 2&ndash;3 pendientes de carta descriptiva</span>
+    <div class="footer-panel">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="name">Programa IA &middot; SEJUVE Guerrero</span>
+          <p>Programa de Capacitación Institucional en Inteligencia Artificial Aplicada. Perfil práctico, administrativo y No-Code, con enfoque de costo cero y continuidad administrativa.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <span class="h">Programa</span>
+            <button class="footer-link" data-target="panel-programa">Ficha técnica</button>
+            <button class="footer-link" data-target="panel-programa">Justificación</button>
+            <button class="footer-link" data-target="panel-programa">Mapa curricular</button>
+          </div>
+          <div class="footer-col">
+            <span class="h">Sesiones</span>
+            <button class="footer-link" data-target="panel-cronograma" data-anchor="modulo-1">Módulo 1 &middot; Fundamentos</button>
+            <button class="footer-link" data-target="panel-cronograma" data-anchor="modulo-2">Módulo 2 &middot; Datos y difusión</button>
+            <button class="footer-link" data-target="panel-cronograma" data-anchor="modulo-3">Módulo 3 &middot; Automatización</button>
+          </div>
+          <div class="footer-col">
+            <span class="h">Gobernanza</span>
+            <button class="footer-link" data-target="panel-evaluacion">Normativa ITAIGro</button>
+            <button class="footer-link" data-target="panel-evaluacion">Semáforo de datos</button>
+            <button class="footer-link" data-target="panel-evaluacion">Sostenibilidad financiera</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Secretaría de la Juventud y la Niñez del Estado de Guerrero (SEJUVE)</span>
+        <span>Marco normativo: Lineamientos de Protección de Datos del ITAIGro</span>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -1170,6 +1323,20 @@ Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmul
 
   tabs.forEach(function(btn){
     btn.addEventListener('click', function(){ activate(btn.dataset.target, true); });
+  });
+
+  var footerLinks = Array.prototype.slice.call(document.querySelectorAll('.footer-link'));
+  footerLinks.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activate(btn.dataset.target, true);
+      var anchorId = btn.dataset.anchor;
+      if(anchorId){
+        requestAnimationFrame(function(){
+          var el = document.getElementById(anchorId);
+          if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        });
+      }
+    });
   });
 
   var saved = null;
