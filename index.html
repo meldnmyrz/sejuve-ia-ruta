@@ -7,73 +7,40 @@
 <link rel="icon" href="data:,">
 <title>Ruta IA SEJUVE</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
+  /* Identidad Gobierno de Mexico (guinda, manual 2018-2024) sobre interfaz
+     limpia de tarjetas / badges numerados / nav minimalista. Tipografia
+     oficial "Gibson" / "Patria" no distribuida como webfont publica;
+     Archivo se usa como sustituto geometrico de uso libre. */
   :root{
-    --paper:#EEF1EA;
+    --paper:#F2F2F2;
     --surface:#FFFFFF;
-    --surface-2:#F5F7F1;
-    --ink:#16302B;
-    --ink-soft:#4C6862;
-    --ink-faint:#7A9791;
-    --line:rgba(22,48,43,0.16);
-    --line-soft:rgba(22,48,43,0.09);
-    --primary:#1B6E62;
-    --primary-strong:#0F4A42;
-    --primary-tint:#DCEAE5;
-    --accent:#BE7530;
-    --accent-strong:#93591F;
-    --accent-tint:#F1E2CB;
-    --berry:#93384A;
-    --berry-strong:#722939;
-    --berry-tint:#F2DEE2;
-    --shadow: 0 1px 2px rgba(22,48,43,0.05), 0 8px 24px -12px rgba(22,48,43,0.18);
-    --radius-card:14px;
-    --font-display:'IBM Plex Serif', Georgia, 'Times New Roman', serif;
-    --font-body:'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --surface-2:#EDEDEC;
+    --ink:#1A1A1A;
+    --ink-soft:#6B6B6B;
+    --ink-faint:#8A8A8A;
+    --line:rgba(26,26,26,0.13);
+    --line-soft:rgba(26,26,26,0.08);
+    --primary:#4A001F;
+    --primary-strong:#6B0430;
+    --primary-tint:rgba(74,0,31,0.07);
+    --on-primary:#FFFFFF;
+    --rosa:#FFC4D0;
+    --accent:#A8672A;
+    --accent-strong:#7F4E1F;
+    --accent-tint:#F5EADA;
+    --berry:#B3261E;
+    --berry-strong:#8C1E18;
+    --berry-tint:#FBE8E6;
+    --safe:#2E7D5B;
+    --safe-strong:#1F5C42;
+    --safe-tint:#E3F1EA;
+    --shadow: 0 1px 2px rgba(26,26,26,0.04), 0 20px 40px -24px rgba(26,26,26,0.18);
+    --radius-card:16px;
+    --font-display:'Archivo', -apple-system, 'Segoe UI', sans-serif;
+    --font-body:'Archivo', -apple-system, 'Segoe UI', sans-serif;
     --font-mono:'IBM Plex Mono', 'Courier New', monospace;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#0E1D19;
-      --surface:#142B25;
-      --surface-2:#11241F;
-      --ink:#E7EFEA;
-      --ink-soft:#A9C4BC;
-      --ink-faint:#6F8C85;
-      --line:rgba(231,239,234,0.16);
-      --line-soft:rgba(231,239,234,0.09);
-      --primary:#57C4AC;
-      --primary-strong:#89DAC7;
-      --primary-tint:#163832;
-      --accent:#E3A15C;
-      --accent-strong:#F0BE8A;
-      --accent-tint:#3A2A18;
-      --berry:#E38A98;
-      --berry-strong:#F0AEB9;
-      --berry-tint:#3A1E23;
-      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#0E1D19;
-    --surface:#142B25;
-    --surface-2:#11241F;
-    --ink:#E7EFEA;
-    --ink-soft:#A9C4BC;
-    --ink-faint:#6F8C85;
-    --line:rgba(231,239,234,0.16);
-    --line-soft:rgba(231,239,234,0.09);
-    --primary:#57C4AC;
-    --primary-strong:#89DAC7;
-    --primary-tint:#163832;
-    --accent:#E3A15C;
-    --accent-strong:#F0BE8A;
-    --accent-tint:#3A2A18;
-    --berry:#E38A98;
-    --berry-strong:#F0AEB9;
-    --berry-tint:#3A1E23;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
   }
 
   *{box-sizing:border-box;}
@@ -87,11 +54,13 @@
   }
   h1,h2,h3,h4{
     font-family:var(--font-display);
-    font-weight:600;
+    font-weight:800;
+    letter-spacing:-0.02em;
     color:var(--ink);
     text-wrap:balance;
     margin:0;
   }
+  h3,h4{font-weight:700;letter-spacing:-0.01em;}
   p{margin:0;}
   a{color:var(--primary-strong);}
   .shell{max-width:980px;margin:0 auto;padding-inline:20px;}
@@ -111,7 +80,7 @@
   }
   .mark{flex:none;width:40px;height:40px;}
   .brand-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
-  .brand-text .name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.2;}
+  .brand-text .name{font-family:var(--font-display);font-weight:800;letter-spacing:-0.01em;font-size:1.05rem;line-height:1.2;}
   .brand-text .sub{font-size:0.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .brand-meta{
     margin-left:auto;flex:none;
@@ -127,15 +96,21 @@
     overflow-x:auto;
   }
   .tab-btn{
-    font:inherit;font-family:var(--font-body);font-weight:600;font-size:0.88rem;
-    color:var(--ink-soft);
-    background:transparent;border:1px solid transparent;border-radius:999px;
-    padding:8px 16px;cursor:pointer;white-space:nowrap;
-    transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+    font:inherit;font-family:var(--font-body);font-weight:700;font-size:0.88rem;
+    color:var(--ink-faint);
+    background:transparent;border:none;border-radius:6px;
+    padding:8px 14px 10px;cursor:pointer;white-space:nowrap;position:relative;
+    transition:color .15s ease;
   }
-  .tab-btn:hover{color:var(--ink);background:var(--surface-2);}
-  .tab-btn:active{transform:scale(.96);}
-  .tab-btn.active{color:var(--surface);background:var(--primary);border-color:var(--primary);}
+  .tab-btn::after{
+    content:"";position:absolute;left:14px;right:14px;bottom:0;height:3px;border-radius:2px;
+    background:var(--primary);transform:scaleX(0);transform-origin:left;
+    transition:transform .2s cubic-bezier(.16,1,.3,1);
+  }
+  .tab-btn:hover{color:var(--ink);}
+  .tab-btn:active{transform:scale(.97);}
+  .tab-btn.active{color:var(--ink);}
+  .tab-btn.active::after{transform:scaleX(1);}
   .tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
 
   main{padding-block:32px 64px;}
@@ -162,17 +137,22 @@
     font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;
     color:var(--primary-strong);font-weight:600;
   }
-  .section-head h2{font-size:1.5rem;}
+  .section-head h2{font-size:1.7rem;}
   .section-head p{color:var(--ink-soft);font-size:0.98rem;max-width:60ch;}
-  .lede{font-size:1.08rem;color:var(--ink-soft);max-width:68ch;}
+  .lede{font-size:1.15rem;color:var(--ink-soft);max-width:68ch;font-weight:500;}
 
-  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .chip{
     font-family:var(--font-mono);font-size:0.78rem;
     background:var(--surface);border:1px solid var(--line);border-radius:999px;
     padding:6px 12px;color:var(--ink-soft);
   }
   .chip b{color:var(--ink);font-weight:600;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--line-soft);}
+  @media (max-width:640px){ .stat-row{grid-template-columns:repeat(2,1fr);} }
+  .stat-row .num{font-family:var(--font-display);font-weight:800;font-size:2rem;letter-spacing:-0.02em;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums;}
+  .stat-row .cap{margin-top:6px;font-size:0.82rem;color:var(--ink-soft);}
 
   .grid{display:grid;gap:16px;}
   .grid-2{grid-template-columns:repeat(2,1fr);}
@@ -186,14 +166,14 @@
     display:flex;flex-direction:column;gap:8px;
     transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, border-color .18s ease;
   }
-  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--primary) 40%, var(--line));box-shadow:0 2px 4px rgba(22,48,43,0.06), 0 18px 32px -16px rgba(22,48,43,0.28);}
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--primary) 30%, var(--line));box-shadow:0 2px 4px rgba(26,26,26,0.05), 0 18px 32px -16px rgba(26,26,26,0.16);}
   .card h3{font-size:1.02rem;}
   .card p{color:var(--ink-soft);font-size:0.92rem;}
 
   .badge-num{
     display:inline-flex;align-items:center;justify-content:center;
     width:28px;height:28px;border-radius:8px;flex:none;
-    background:var(--primary-tint);color:var(--primary-strong);
+    background:var(--primary);color:var(--on-primary);
     font-family:var(--font-mono);font-weight:600;font-size:0.85rem;
   }
   .card-top{display:flex;align-items:center;gap:10px;}
@@ -246,16 +226,19 @@
   }
   .pill[data-level="confidencial"]{background:var(--accent-tint);color:var(--accent-strong);}
   .pill[data-level="sensible"]{background:var(--berry-tint);color:var(--berry-strong);}
-  .pill[data-level="libre"]{background:var(--primary-tint);color:var(--primary-strong);}
+  .pill[data-level="libre"]{background:var(--safe-tint);color:var(--safe-strong);}
   .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;}
 
-  /* accordions */
-  details.class-card{
+  /* accordions: un solo contenedor, filas divididas (patron tipo FAQ) */
+  .accordion-group{
     background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
-    box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;
-    transition:border-color .18s ease, box-shadow .18s ease;
+    box-shadow:var(--shadow);overflow:hidden;
   }
-  details.class-card:hover{border-color:color-mix(in srgb, var(--primary) 35%, var(--line));}
+  details.class-card{
+    background:transparent;border:none;border-radius:0;box-shadow:none;margin-bottom:0;
+    border-top:1px solid var(--line-soft);
+  }
+  .accordion-group details.class-card:first-child{border-top:none;}
   details.class-card summary{
     list-style:none;cursor:pointer;padding:18px 20px;
     display:flex;align-items:center;gap:14px;
@@ -272,7 +255,7 @@
   details[open].class-card summary .chev{transform:rotate(180deg);}
   .class-num{
     font-family:var(--font-mono);font-weight:600;font-size:0.95rem;
-    color:var(--primary-strong);background:var(--primary-tint);
+    color:var(--on-primary);background:var(--primary);
     width:38px;height:38px;border-radius:10px;flex:none;
     display:flex;align-items:center;justify-content:center;
   }
@@ -347,7 +330,7 @@
   .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   @media (max-width:640px){ .tier-row{grid-template-columns:1fr;} }
   .tier-card{border-radius:var(--radius-card);padding:18px;border:1px solid var(--line);background:var(--surface);transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease;}
-  .tier-card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(22,48,43,0.06), 0 18px 32px -16px rgba(22,48,43,0.28);}
+  .tier-card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(26,26,26,0.05), 0 18px 32px -16px rgba(26,26,26,0.16);}
   .tier-card .range{font-family:var(--font-mono);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;}
   .tier-card .lvl{font-size:0.85rem;color:var(--ink-soft);margin-top:4px;}
   .tier-card.t1{border-top:3px solid var(--ink-faint);}
@@ -400,12 +383,14 @@
   <div class="section">
     <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero de un uso básico de IA generativa a un uso intermedio, aplicado y responsable en sus funciones cotidianas.</p>
     <div class="chip-row">
-      <span class="chip"><b>3</b> meses</span>
-      <span class="chip"><b>12</b> sesiones semanales</span>
-      <span class="chip"><b>180 min</b> por sesión</span>
-      <span class="chip"><b>15&ndash;25</b> personas por grupo</span>
       <span class="chip">1 facilitador + 1 asistente técnico</span>
       <span class="chip">4 ejes de competencia</span>
+    </div>
+    <div class="stat-row">
+      <div><span class="num">3</span><div class="cap">meses de duración</div></div>
+      <div><span class="num">12</span><div class="cap">sesiones semanales</div></div>
+      <div><span class="num">180</span><div class="cap">minutos por sesión</div></div>
+      <div><span class="num">15&ndash;25</span><div class="cap">personas por grupo</div></div>
     </div>
   </div>
 
@@ -572,6 +557,7 @@
       <p>Objetivo, minuto a minuto, actividades, materiales, rúbrica y notas para el facilitador de cada una de las cuatro primeras clases.</p>
     </div>
 
+    <div class="accordion-group">
     <!-- CLASE 1 -->
     <details class="class-card" open>
       <summary>
@@ -818,6 +804,7 @@ Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmul
         <p class="facilitator-note">Preparar los textos con errores con 48 horas de anticipación, idealmente revisados por un segundo facilitador. Esta clase cierra el Mes 1: recoger retroalimentación del grupo antes de entrar a Mes 2.</p>
       </div>
     </details>
+    </div>
   </div>
 
   <div class="section anchor-target" id="mes2-cartas">
