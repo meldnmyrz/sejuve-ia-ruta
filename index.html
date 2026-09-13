@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Guia del facilitador del programa de capacitacion en IA de SEJUVE Guerrero: marco del programa, cronograma con cartas descriptivas, y evaluacion y normativa de datos de ninez." />
+<link rel="icon" href="data:,">
+<title>Ruta IA SEJUVE</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#EEF1EA;
+    --surface:#FFFFFF;
+    --surface-2:#F5F7F1;
+    --ink:#16302B;
+    --ink-soft:#4C6862;
+    --ink-faint:#7A9791;
+    --line:rgba(22,48,43,0.16);
+    --line-soft:rgba(22,48,43,0.09);
+    --primary:#1B6E62;
+    --primary-strong:#0F4A42;
+    --primary-tint:#DCEAE5;
+    --accent:#BE7530;
+    --accent-strong:#93591F;
+    --accent-tint:#F1E2CB;
+    --berry:#93384A;
+    --berry-strong:#722939;
+    --berry-tint:#F2DEE2;
+    --shadow: 0 1px 2px rgba(22,48,43,0.05), 0 8px 24px -12px rgba(22,48,43,0.18);
+    --radius-card:14px;
+    --font-display:'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+    --font-body:'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1D19;
+      --surface:#142B25;
+      --surface-2:#11241F;
+      --ink:#E7EFEA;
+      --ink-soft:#A9C4BC;
+      --ink-faint:#6F8C85;
+      --line:rgba(231,239,234,0.16);
+      --line-soft:rgba(231,239,234,0.09);
+      --primary:#57C4AC;
+      --primary-strong:#89DAC7;
+      --primary-tint:#163832;
+      --accent:#E3A15C;
+      --accent-strong:#F0BE8A;
+      --accent-tint:#3A2A18;
+      --berry:#E38A98;
+      --berry-strong:#F0AEB9;
+      --berry-tint:#3A1E23;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1D19;
+    --surface:#142B25;
+    --surface-2:#11241F;
+    --ink:#E7EFEA;
+    --ink-soft:#A9C4BC;
+    --ink-faint:#6F8C85;
+    --line:rgba(231,239,234,0.16);
+    --line-soft:rgba(231,239,234,0.09);
+    --primary:#57C4AC;
+    --primary-strong:#89DAC7;
+    --primary-tint:#163832;
+    --accent:#E3A15C;
+    --accent-strong:#F0BE8A;
+    --accent-tint:#3A2A18;
+    --berry:#E38A98;
+    --berry-strong:#F0AEB9;
+    --berry-tint:#3A1E23;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    font-weight:600;
+    color:var(--ink);
+    text-wrap:balance;
+    margin:0;
+  }
+  p{margin:0;}
+  a{color:var(--primary-strong);}
+  .shell{max-width:980px;margin:0 auto;padding-inline:20px;}
+  @media (min-width:640px){ .shell{padding-inline:32px;} }
+
+  /* ---------- header ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(10px) saturate(140%);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .brand-row{
+    display:flex;align-items:center;gap:14px;
+    padding-block:14px;
+  }
+  .mark{flex:none;width:40px;height:40px;}
+  .brand-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+  .brand-text .name{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.2;}
+  .brand-text .sub{font-size:0.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .brand-meta{
+    margin-left:auto;flex:none;
+    font-family:var(--font-mono);font-size:0.72rem;color:var(--ink-faint);
+    text-align:right;line-height:1.3;
+  }
+  @media (max-width:560px){ .brand-meta{display:none;} }
+
+  .tablist{
+    display:flex;gap:4px;
+    border-top:1px solid var(--line-soft);
+    padding-block:8px;
+    overflow-x:auto;
+  }
+  .tab-btn{
+    font:inherit;font-family:var(--font-body);font-weight:600;font-size:0.88rem;
+    color:var(--ink-soft);
+    background:transparent;border:1px solid transparent;border-radius:999px;
+    padding:8px 16px;cursor:pointer;white-space:nowrap;
+    transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .tab-btn:hover{color:var(--ink);background:var(--surface-2);}
+  .tab-btn:active{transform:scale(.96);}
+  .tab-btn.active{color:var(--surface);background:var(--primary);border-color:var(--primary);}
+  .tab-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px;}
+
+  main{padding-block:32px 64px;}
+  .tab-panel[hidden]{display:none;}
+  @keyframes panelIn{ from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+  .tab-panel.enter{animation:panelIn .32s cubic-bezier(.16,1,.3,1);}
+
+  /* in-page quick nav (Cronograma y clases) */
+  .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px;}
+  .quicknav a{
+    font-family:var(--font-mono);font-size:0.76rem;text-decoration:none;
+    color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);
+    border-radius:999px;padding:6px 13px;transition:color .15s ease, border-color .15s ease, background-color .15s ease;
+  }
+  .quicknav a:hover{color:var(--primary-strong);border-color:var(--primary);background:var(--primary-tint);}
+  @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth;} }
+  .anchor-target{scroll-margin-top:118px;}
+
+  /* ---------- generic building blocks ---------- */
+  .section{padding-block:36px;border-top:1px solid var(--line-soft);}
+  .section:first-child{border-top:none;padding-top:0;}
+  .section-head{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;max-width:65ch;}
+  .eyebrow{
+    font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--primary-strong);font-weight:600;
+  }
+  .section-head h2{font-size:1.5rem;}
+  .section-head p{color:var(--ink-soft);font-size:0.98rem;max-width:60ch;}
+  .lede{font-size:1.08rem;color:var(--ink-soft);max-width:68ch;}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .chip{
+    font-family:var(--font-mono);font-size:0.78rem;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;
+    padding:6px 12px;color:var(--ink-soft);
+  }
+  .chip b{color:var(--ink);font-weight:600;}
+
+  .grid{display:grid;gap:16px;}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:820px){ .grid-4{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid-2,.grid-4{grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
+    padding:18px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:8px;
+    transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--primary) 40%, var(--line));box-shadow:0 2px 4px rgba(22,48,43,0.06), 0 18px 32px -16px rgba(22,48,43,0.28);}
+  .card h3{font-size:1.02rem;}
+  .card p{color:var(--ink-soft);font-size:0.92rem;}
+
+  .badge-num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:8px;flex:none;
+    background:var(--primary-tint);color:var(--primary-strong);
+    font-family:var(--font-mono);font-weight:600;font-size:0.85rem;
+  }
+  .card-top{display:flex;align-items:center;gap:10px;}
+
+  .tag{
+    display:inline-block;font-family:var(--font-mono);font-size:0.72rem;
+    color:var(--ink-faint);margin-top:2px;
+  }
+
+  /* compare (antes/despues) */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:640px){ .compare{grid-template-columns:1fr;} }
+  .compare .card{border-top-width:3px;border-top-style:solid;}
+  .compare .card.before{border-top-color:var(--ink-faint);}
+  .compare .card.after{border-top-color:var(--primary);}
+  .compare .label{font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);}
+  .compare .after .label{color:var(--primary-strong);}
+
+  /* session bar */
+  .session-bar{display:flex;width:100%;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+  .session-bar span{display:block;height:100%;}
+  .session-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px;margin-top:14px;}
+  .session-legend .item{display:flex;gap:8px;font-size:0.85rem;color:var(--ink-soft);}
+  .session-legend .swatch{width:12px;height:12px;border-radius:3px;flex:none;margin-top:4px;}
+  .session-legend b{color:var(--ink);font-family:var(--font-mono);font-weight:600;}
+
+  /* tables */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--surface);box-shadow:var(--shadow);}
+  table{border-collapse:collapse;width:100%;font-size:0.88rem;min-width:560px;}
+  thead th{
+    text-align:left;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;padding:12px 14px;border-bottom:1px solid var(--line);
+    background:var(--surface-2);
+  }
+  tbody td{padding:12px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;color:var(--ink-soft);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td.strong{color:var(--ink);font-weight:600;}
+  tbody td.mono{font-family:var(--font-mono);font-size:0.82rem;}
+  tr.month-1 td:first-child{box-shadow:inset 3px 0 0 var(--primary);}
+  tr.month-2 td:first-child{box-shadow:inset 3px 0 0 var(--accent);}
+  tr.month-3 td:first-child{box-shadow:inset 3px 0 0 var(--berry);}
+
+  .month-flag{font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);}
+
+  /* pills for data levels */
+  .pill{
+    display:inline-flex;align-items:center;gap:5px;
+    font-family:var(--font-mono);font-size:0.72rem;font-weight:600;
+    padding:4px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .pill[data-level="confidencial"]{background:var(--accent-tint);color:var(--accent-strong);}
+  .pill[data-level="sensible"]{background:var(--berry-tint);color:var(--berry-strong);}
+  .pill[data-level="libre"]{background:var(--primary-tint);color:var(--primary-strong);}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;}
+
+  /* accordions */
+  details.class-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);
+    box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;
+    transition:border-color .18s ease, box-shadow .18s ease;
+  }
+  details.class-card:hover{border-color:color-mix(in srgb, var(--primary) 35%, var(--line));}
+  details.class-card summary{
+    list-style:none;cursor:pointer;padding:18px 20px;
+    display:flex;align-items:center;gap:14px;
+    transition:background-color .15s ease;
+  }
+  details.class-card summary:hover{background:var(--surface-2);}
+  details.class-card summary:active{transform:scale(.995);}
+  details.class-card summary:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;}
+  details.class-card summary::-webkit-details-marker{display:none;}
+  details.class-card summary .chev{
+    margin-left:auto;flex:none;width:18px;height:18px;color:var(--ink-faint);
+    transition:transform .18s ease;
+  }
+  details[open].class-card summary .chev{transform:rotate(180deg);}
+  .class-num{
+    font-family:var(--font-mono);font-weight:600;font-size:0.95rem;
+    color:var(--primary-strong);background:var(--primary-tint);
+    width:38px;height:38px;border-radius:10px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .class-summary-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .class-summary-text .t{font-weight:600;font-size:0.98rem;}
+  .class-summary-text .m{font-size:0.8rem;color:var(--ink-faint);font-family:var(--font-mono);}
+  .class-body{padding:0 20px 24px;border-top:1px solid var(--line-soft);}
+  .class-body .obj{
+    background:var(--surface-2);border-radius:10px;padding:14px 16px;margin:18px 0;
+    font-size:0.94rem;color:var(--ink-soft);
+  }
+  .class-body h4{font-size:0.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint);font-family:var(--font-mono);margin:22px 0 10px;}
+
+  /* timeline */
+  .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);margin-left:6px;}
+  .timeline li{position:relative;padding:0 0 16px 22px;}
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";position:absolute;left:-7px;top:3px;width:12px;height:12px;border-radius:50%;
+    background:var(--primary);border:2px solid var(--surface);
+  }
+  .timeline .time{font-family:var(--font-mono);font-size:0.76rem;color:var(--primary-strong);font-weight:600;display:block;}
+  .timeline .blk{font-weight:600;font-size:0.94rem;margin-top:2px;display:block;}
+  .timeline .desc{font-size:0.88rem;color:var(--ink-soft);margin-top:2px;}
+
+  pre{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;overflow-x:auto;font-family:var(--font-mono);font-size:0.82rem;
+    color:var(--ink);line-height:1.6;
+  }
+
+  .tag-list{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-pill{
+    font-size:0.8rem;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;color:var(--ink-soft);
+  }
+
+  .rubric-item{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid var(--line-soft);}
+  .rubric-item:last-child{border-bottom:none;}
+  .rubric-item .crit{font-weight:600;font-size:0.9rem;}
+  .rubric-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.85rem;color:var(--ink-soft);}
+  .rubric-flow .from{background:var(--surface-2);border-radius:6px;padding:4px 9px;}
+  .rubric-flow .to{background:var(--primary-tint);color:var(--primary-strong);border-radius:6px;padding:4px 9px;font-weight:600;}
+  .rubric-flow .arrow{color:var(--ink-faint);flex:none;}
+
+  .callout{
+    border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;
+    padding:16px 18px;background:var(--primary-tint);display:flex;gap:12px;
+  }
+  .callout p{color:var(--ink);font-size:0.92rem;}
+  .callout .ic{flex:none;color:var(--primary-strong);margin-top:2px;}
+  .callout--warn{border-left-color:var(--accent);background:var(--accent-tint);}
+  .callout--warn .ic{color:var(--accent-strong);}
+  .callout--danger{border-left-color:var(--berry);background:var(--berry-tint);}
+  .callout--danger .ic{color:var(--berry-strong);}
+
+  .facilitator-note{
+    background:var(--surface-2);border:1px dashed var(--line);border-radius:10px;
+    padding:14px 16px;font-size:0.88rem;color:var(--ink-soft);
+  }
+
+  .pending-card{
+    border:1px dashed var(--line);border-radius:var(--radius-card);padding:16px 18px;
+    background:var(--surface-2);display:flex;flex-direction:column;gap:6px;
+    transition:transform .18s cubic-bezier(.16,1,.3,1), border-color .18s ease;
+  }
+  .pending-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb, var(--accent) 45%, var(--line));}
+  .pending-card .t{font-weight:600;font-size:0.94rem;}
+  .pending-card .m{font-size:0.8rem;color:var(--ink-faint);font-family:var(--font-mono);}
+  .pending-flag{font-family:var(--font-mono);font-size:0.68rem;color:var(--accent-strong);background:var(--accent-tint);padding:2px 8px;border-radius:999px;align-self:flex-start;}
+
+  .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:640px){ .tier-row{grid-template-columns:1fr;} }
+  .tier-card{border-radius:var(--radius-card);padding:18px;border:1px solid var(--line);background:var(--surface);transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease;}
+  .tier-card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(22,48,43,0.06), 0 18px 32px -16px rgba(22,48,43,0.28);}
+  .tier-card .range{font-family:var(--font-mono);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;}
+  .tier-card .lvl{font-size:0.85rem;color:var(--ink-soft);margin-top:4px;}
+  .tier-card.t1{border-top:3px solid var(--ink-faint);}
+  .tier-card.t2{border-top:3px solid var(--accent);}
+  .tier-card.t3{border-top:3px solid var(--primary);}
+
+  .check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .check-list li{display:flex;gap:10px;align-items:flex-start;font-size:0.94rem;color:var(--ink-soft);}
+  .check-list .chk{flex:none;width:20px;height:20px;color:var(--primary);margin-top:1px;}
+
+  footer{border-top:1px solid var(--line);padding-block:26px;margin-top:20px;}
+  footer .shell{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:0.8rem;color:var(--ink-faint);font-family:var(--font-mono);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <div class="brand-row">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="10" fill="var(--primary-tint)" stroke="var(--primary)" stroke-width="1.5"/>
+        <circle cx="11" cy="27" r="3.4" fill="var(--primary)"/>
+        <circle cx="20.5" cy="19.5" r="3.4" fill="var(--accent)"/>
+        <circle cx="30" cy="12" r="3.4" fill="var(--primary)"/>
+        <path d="M13.8 24.8 L18 21.5 M23.2 17.8 L27.3 14.5" stroke="var(--ink-faint)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <span class="name">Ruta IA · SEJUVE Guerrero</span>
+        <span class="sub">Guía del facilitador &middot; capacitación en inteligencia artificial aplicada</span>
+      </div>
+      <div class="brand-meta">3 meses &middot; 12 sesiones<br>Secretaría de la Juventud y la Niñez</div>
+    </div>
+    <nav class="tablist" role="tablist" aria-label="Secciones del programa">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-programa" data-target="panel-programa">Programa</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-cronograma" data-target="panel-cronograma">Cronograma y clases</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-evaluacion" data-target="panel-evaluacion">Evaluación y normativa</button>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+
+<!-- ================= TAB 1: PROGRAMA ================= -->
+<section class="tab-panel" id="panel-programa" role="tabpanel">
+
+  <div class="section">
+    <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero de un uso básico de IA generativa a un uso intermedio, aplicado y responsable en sus funciones cotidianas.</p>
+    <div class="chip-row">
+      <span class="chip"><b>3</b> meses</span>
+      <span class="chip"><b>12</b> sesiones semanales</span>
+      <span class="chip"><b>180 min</b> por sesión</span>
+      <span class="chip"><b>15&ndash;25</b> personas por grupo</span>
+      <span class="chip">1 facilitador + 1 asistente técnico</span>
+      <span class="chip">4 ejes de competencia</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>De dónde parte el personal y a dónde llega</h2>
+      <p>La guía está pensada para que el programa se imparta con consistencia aunque cambie quién lo facilita.</p>
+    </div>
+    <div class="compare">
+      <div class="card before">
+        <span class="label">Diagnóstico de entrada</span>
+        <p>Exposición ocasional a chatbots de uso general, redacción administrativa manual, hojas de cálculo estáticas y nula trazabilidad en el manejo de datos de niñas, niños y adolescentes en los procesos de atención.</p>
+      </div>
+      <div class="card after">
+        <span class="label">Meta a 3 meses</span>
+        <p>Personal que redacta con apoyo de IA validando cada salida, investiga con fuentes verificables, anonimiza datos sensibles antes de procesarlos y automatiza al menos un flujo operativo real de su área sin depender de desarrollo a la medida.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Principios de diseño del programa</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <h3>Caso real de SEJUVE en cada clase</h3>
+        <p>Ningún ejercicio usa datos genéricos cuando puede usar un proceso real del área: solicitudes ciudadanas, convocatorias juveniles, expedientes de atención, reportes a Bienestar estatal.</p>
+      </div>
+      <div class="card">
+        <h3>La niñez como criterio de diseño</h3>
+        <p>El resguardo de datos de menores de edad se introduce desde la Clase 1 y se audita explícitamente en la Clase 4 y en el proyecto integrador.</p>
+      </div>
+      <div class="card">
+        <h3>Herramienta gratuita o institucional</h3>
+        <p>Todo el programa opera con capas gratuitas o licenciamiento ya disponible en el gobierno estatal.</p>
+      </div>
+      <div class="card">
+        <h3>Evaluación formativa, no punitiva</h3>
+        <p>Cada clase cierra con una rúbrica de 4 niveles pensada para dar retroalimentación, no para descalificar personal con menor alfabetización digital previa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Cuatro ejes de competencia</h2>
+      <p>Cada clase del programa se ancla en uno o más de estos ejes.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-top"><span class="badge-num">1</span><h3>Redacción y comunicación institucional asistida</h3></div>
+        <p>Oficios, respuestas ciudadanas, actas, convocatorias e informes redactados con apoyo de IA y validados antes de firma.</p>
+        <span class="tag">Clases 01, 02, 08</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="badge-num">2</span><h3>Análisis de necesidades juveniles con datos</h3></div>
+        <p>Lectura de bases comunitarias, consultas en lenguaje natural y diagnósticos sociales con fuentes citadas.</p>
+        <span class="tag">Clases 03, 05, 06, 08</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="badge-num">3</span><h3>Protección y anonimización de datos de niñez</h3></div>
+        <p>Clasificación de datos sensibles, enmascaramiento de identificadores y pipelines de anonimización para expedientes de personas menores de edad.</p>
+        <span class="tag">Clases 04, 07</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><span class="badge-num">4</span><h3>Automatización operativa No-Code</h3></div>
+        <p>Mapeo de flujos, alertas automáticas y presentaciones ejecutivas generadas sin programar.</p>
+        <span class="tag">Clases 09, 10, 11</span>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px;">
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8.5 12 2.4 2.4L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><b>Proyecto integrador (Clase 12):</b> cada persona o equipo presenta un caso de su propia dirección que combine al menos 3 de los 4 ejes. Ejemplo: un flujo que reciba solicitudes de apoyo (Eje 4), las resuma con datos anonimizados de las familias solicitantes (Eje 3), calcule prioridad con una consulta en lenguaje natural (Eje 2) y genere automáticamente el oficio de respuesta (Eje 1).</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Estructura de sesión tipo</h2>
+      <p>Las 12 cartas descriptivas del programa siguen el mismo esqueleto de 180 minutos.</p>
+    </div>
+    <div class="session-bar" aria-hidden="true">
+      <span style="width:8.3%;background:var(--primary);"></span>
+      <span style="width:16.7%;background:color-mix(in srgb, var(--primary) 80%, var(--surface));"></span>
+      <span style="width:13.9%;background:color-mix(in srgb, var(--primary) 60%, var(--surface));"></span>
+      <span style="width:44.4%;background:var(--accent);"></span>
+      <span style="width:11.1%;background:color-mix(in srgb, var(--primary) 40%, var(--surface));"></span>
+      <span style="width:5.6%;background:var(--ink-faint);"></span>
+    </div>
+    <div class="session-legend">
+      <div class="item"><span class="swatch" style="background:var(--primary);"></span><span><b>15 min</b> &middot; Apertura y activación</span></div>
+      <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 80%, var(--surface));"></span><span><b>30 min</b> &middot; Marco conceptual</span></div>
+      <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 60%, var(--surface));"></span><span><b>25 min</b> &middot; Demostración guiada</span></div>
+      <div class="item"><span class="swatch" style="background:var(--accent);"></span><span><b>80 min</b> &middot; Taller práctico aplicado</span></div>
+      <div class="item"><span class="swatch" style="background:color-mix(in srgb, var(--primary) 40%, var(--surface));"></span><span><b>20 min</b> &middot; Puesta en común</span></div>
+      <div class="item"><span class="swatch" style="background:var(--ink-faint);"></span><span><b>10 min</b> &middot; Cierre y tarea</span></div>
+    </div>
+    <p style="margin-top:16px;font-size:0.88rem;color:var(--ink-soft);">Si la sesión real dura menos de 3 horas: comprimir primero el Bloque 2 (marco conceptual) y el Bloque 6 (cierre). Nunca comprimir el Bloque 4, el taller práctico: es donde ocurre el aprendizaje transferible.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Requisitos técnicos generales</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Recurso</th><th>Uso en el programa</th><th>Costo</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Cuenta de Google (institucional o Gmail)</td><td>Colab, Sheets, acceso a Gemini</td><td>Gratuito</td></tr>
+          <tr><td class="strong">Navegador actualizado (Chrome / Edge)</td><td>Todas las herramientas web del curso</td><td>&mdash;</td></tr>
+          <tr><td class="strong">Conexión estable &ge; 5 Mbps</td><td>Sesiones sincrónicas y ejecución en Colab</td><td>&mdash;</td></tr>
+          <tr><td class="strong">ChatGPT, Claude, Gemini, Perplexity</td><td>Clases 1, 2, 3, 8</td><td>Nivel gratuito suficiente</td></tr>
+          <tr><td class="strong">Python en Colab (Pandas, Regex, Faker, spaCy, Presidio)</td><td>Clases 1, 5, 6, 7</td><td>Gratuito vía Colab</td></tr>
+          <tr><td class="strong">Make / Power Automate / Zapier</td><td>Clases 9 y 10</td><td>Nivel gratuito con límite de ejecuciones</td></tr>
+          <tr><td class="strong">Gamma App, Canva, python-pptx</td><td>Clase 11</td><td>Nivel gratuito suficiente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TAB 2: CRONOGRAMA Y CLASES ================= -->
+<section class="tab-panel" id="panel-cronograma" role="tabpanel" hidden>
+
+  <nav class="quicknav" aria-label="Navegación dentro de esta pestaña">
+    <a href="#cronograma-tabla">Cronograma completo</a>
+    <a href="#mes1-cartas">Cartas Mes 1</a>
+    <a href="#mes2-cartas">Mes 2</a>
+    <a href="#mes3-cartas">Mes 3</a>
+  </nav>
+
+  <div class="section anchor-target" id="cronograma-tabla">
+    <div class="section-head">
+      <h2>Cronograma completo del programa</h2>
+      <p>Las Clases 1 a 4 (Mes 1) están desarrolladas a nivel de carta descriptiva completa más abajo. Mes 2 y Mes 3 siguen la misma plantilla, pendientes de desarrollar con ese mismo nivel de detalle.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Clase</th><th>Tema</th><th>Herramientas</th><th>Producto de la clase</th></tr></thead>
+        <tbody>
+          <tr class="month-1"><td class="strong mono">01<span class="month-flag"><br>Mes 1</span></td><td>Introducción a la IA en el sector público y diagnóstico de madurez digital</td><td>Colab, ChatGPT, Claude, Gemini, Perplexity</td><td>Autodiagnóstico en 6 ámbitos + primer script en Colab</td></tr>
+          <tr class="month-1"><td class="strong mono">02</td><td>Ingeniería de prompts para la gestión pública</td><td>ChatGPT, Claude, Gemini</td><td>Biblioteca de prompts reutilizables</td></tr>
+          <tr class="month-1"><td class="strong mono">03</td><td>Selección especializada de modelos e investigación profunda</td><td>Perplexity, Claude, Gemini Pro</td><td>Cuadro de benchmarking + diagnóstico social citado</td></tr>
+          <tr class="month-1"><td class="strong mono">04</td><td>Ética pública, ciberseguridad y manejo de riesgos</td><td>Checklists de auditoría y validación ética</td><td>Checklist de alucinaciones + protocolo de resguardo aplicado</td></tr>
+          <tr class="month-2"><td class="strong mono">05<span class="month-flag"><br>Mes 2</span></td><td>Calidad de datos y fuentes abiertas gubernamentales</td><td>Colab, Python / Pandas, CSV / Excel</td><td>Análisis exploratorio de solicitudes comunitarias</td></tr>
+          <tr class="month-2"><td class="strong mono">06</td><td>Consultas en lenguaje natural a bases de datos</td><td>Pandas SQL, ChatGPT, Matplotlib</td><td>Consultas priorizadas + gráficos estadísticos</td></tr>
+          <tr class="month-2"><td class="strong mono">07</td><td>Anonimización y protección de datos personales (PII)</td><td>Python: Regex, Faker, spaCy, Presidio</td><td>Pipeline de anonimización de expedientes de menores</td></tr>
+          <tr class="month-2"><td class="strong mono">08</td><td>Informes ejecutivos y diagnósticos sociales</td><td>Perplexity, ChatGPT, Gemini Pro</td><td>Informe ejecutivo de gestión de 1 página</td></tr>
+          <tr class="month-3"><td class="strong mono">09<span class="month-flag"><br>Mes 3</span></td><td>Automatización No-Code / Low-Code y lógica de flujos</td><td>Make, Power Automate, Zapier</td><td>Flujo No-Code de recepción de solicitudes</td></tr>
+          <tr class="month-3"><td class="strong mono">10</td><td>Integración institucional, alertas y correos automáticos</td><td>Power Automate / Make + Outlook / Gmail, Teams, Sheets</td><td>Reportes automáticos y alertas prioritarias</td></tr>
+          <tr class="month-3"><td class="strong mono">11</td><td>Presentaciones ejecutivas visuales de alto impacto</td><td>Gamma, Canva IA, python-pptx</td><td>Deck generado + script confidencial en python-pptx</td></tr>
+          <tr class="month-3"><td class="strong mono">12</td><td>Proyecto integrador y certificación</td><td>Ecosistema completo</td><td>Sustentación del proyecto integrador por área</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section anchor-target" id="mes1-cartas">
+    <div class="section-head">
+      <span class="eyebrow">Mes 1 &middot; Fundamentos</span>
+      <h2>Cartas descriptivas completas</h2>
+      <p>Objetivo, minuto a minuto, actividades, materiales, rúbrica y notas para el facilitador de cada una de las cuatro primeras clases.</p>
+    </div>
+
+    <!-- CLASE 1 -->
+    <details class="class-card" open>
+      <summary>
+        <span class="class-num">01</span>
+        <span class="class-summary-text">
+          <span class="t">Introducción a la IA en el sector público y diagnóstico de madurez digital</span>
+          <span class="m">Colab &middot; ChatGPT &middot; Claude &middot; Gemini &middot; Perplexity</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de aprendizaje:</b> al finalizar la clase, cada participante distingue tres categorías de herramienta de IA generativa (conversacional, de investigación y de análisis de datos), ubica el nivel de madurez digital actual de su propia área en seis ámbitos, y ejecuta su primera celda de código en Google Colab sin asistencia.</p>
+
+        <h4>Carta minuto a minuto</h4>
+        <ul class="timeline">
+          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Pregunta detonadora: "¿En qué momento de esta semana un trámite se hizo más lento por falta de información o de una herramienta?". Se recogen 4&ndash;5 respuestas en vivo.</span></li>
+          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Qué es IA generativa, diferencia entre modelo conversacional y motor de búsqueda con IA; casos de uso ya vigentes en gobiernos estatales de México; límites reales (alucinación, sesgo, dato sensible).</span></li>
+          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador hace la misma pregunta de gestión pública a ChatGPT, Claude y Perplexity en pantalla compartida y compara las tres respuestas con el grupo.</span></li>
+          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
+          <li><span class="time">01:25&ndash;02:20</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Autodiagnóstico institucional (25 min llenado + 30 min puesta en común).</span></li>
+          <li><span class="time">02:20&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Primer script interactivo en Colab.</span></li>
+          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Autoevaluación rápida y tarea: traer a la Clase 2 un oficio o correo real redactado en el último mes.</span></li>
+        </ul>
+
+        <h4>Actividad 1 &middot; Autodiagnóstico institucional (55 min)</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Cada participante califica su área (no a sí mismo) de 1 a 4 en seis ámbitos: cultura y liderazgo digital, infraestructura y acceso, competencias del personal, gestión y calidad de datos, automatización de procesos, y ética y protección de datos de niñez. Escala: 1 inexistente, 2 inicial, 3 en desarrollo, 4 consolidado. El resultado se traza como un hexágono de madurez que se vuelve a llenar en la Clase 12 para medir avance.</p>
+
+        <h4>Actividad 2 &middot; Primer script en Colab (30 min)</h4>
+        <pre><code>nombre = input("¿Cuál es tu nombre? ")
+area = input("¿En qué área de SEJUVE trabajas? ")
+nivel = input("Del 1 al 4, ¿tu experiencia previa con IA? ")
+
+print(f"¡Bienvenido/a, {nombre}!")
+print(f"Área: {area}")
+print(f"Nivel declarado: {nivel}/4")</code></pre>
+        <p style="color:var(--ink-soft);font-size:0.88rem;">Reto opcional: quien termine antes guarda cada respuesta en una lista de diccionarios y la imprime como tabla, para anticipar el trabajo con Pandas de la Clase 5.</p>
+
+        <h4>Materiales</h4>
+        <div class="tag-list">
+          <span class="tag-pill">Notebook de Colab precargado</span>
+          <span class="tag-pill">Formato de autodiagnóstico en 6 ámbitos</span>
+          <span class="tag-pill">Cuentas gratuitas verificadas con anticipación</span>
+        </div>
+
+        <h4>Rúbrica de la clase</h4>
+        <div class="rubric-item">
+          <span class="crit">Participación en el autodiagnóstico</span>
+          <span class="rubric-flow"><span class="from">No completa los 6 ámbitos</span><span class="arrow">&rarr;</span><span class="to">Completa, justifica cada calificación y propone una acción concreta para el ámbito peor calificado</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Ejecución del script en Colab</span>
+          <span class="rubric-flow"><span class="from">No logra ejecutar la celda</span><span class="arrow">&rarr;</span><span class="to">Ejecuta, modifica con sus datos y completa el reto opcional</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Actitud ante la herramienta</span>
+          <span class="rubric-flow"><span class="from">Rechaza probar sin justificación</span><span class="arrow">&rarr;</span><span class="to">Ayuda a un compañero a resolver un bloqueo técnico</span></span>
+        </div>
+
+        <h4>Notas para el facilitador</h4>
+        <p class="facilitator-note">Es normal que 1 de cada 4 participantes no haya usado nunca un notebook de código: reservar apoyo técnico dedicado sin frenar al grupo. El autodiagnóstico califica al área, no a la persona. Guardar los 6 hexágonos de esta clase como línea base para la Clase 12.</p>
+      </div>
+    </details>
+
+    <!-- CLASE 2 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num">02</span>
+        <span class="class-summary-text">
+          <span class="t">Ingeniería de prompts para la gestión pública</span>
+          <span class="m">ChatGPT &middot; Claude &middot; Gemini &middot; Eje 1</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante redacta un prompt completo con la estructura RCTF (Rol, Contexto, Tarea, Formato), lo usa para producir o mejorar un documento oficial real, y lo documenta en la biblioteca de prompts de su área con al menos un marcador de variable, por ejemplo <code>[NOMBRE_SOLICITANTE]</code>.</p>
+
+        <h4>Carta minuto a minuto</h4>
+        <ul class="timeline">
+          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Cada participante muestra el oficio o correo que trajo de tarea; se identifican 3 problemas comunes de redacción institucional.</span></li>
+          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Estructura RCTF: Rol, Contexto, Tarea, Formato.</span></li>
+          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador transforma un oficio genérico en un prompt RCTF en vivo y compara la salida de los tres modelos.</span></li>
+          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
+          <li><span class="time">01:25&ndash;02:45</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Taller de redacción oficial acelerada.</span></li>
+          <li><span class="time">02:45&ndash;02:55</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Cada quien sube su mejor prompt a la biblioteca compartida.</span></li>
+          <li><span class="time">02:55&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Advertencia de uso responsable y tarea: traer a la Clase 3 un tema de diagnóstico social relevante para su dirección.</span></li>
+        </ul>
+
+        <h4>Actividad 1 &middot; Taller de redacción oficial acelerada (80 min)</h4>
+        <pre><code>Rol: Actúa como [puesto] de la Secretaría de la Juventud y la Niñez de Guerrero.
+Contexto: [resumen del caso, 2-3 líneas, sin datos identificables de menores].
+Tarea: Redacta un [oficio/respuesta/acta] que [objetivo concreto del documento].
+Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmula
+         de despedida vigente de la Secretaría.</code></pre>
+        <p style="color:var(--ink-soft);font-size:0.88rem;">Cada quien genera 2 versiones (modelos distintos) y elige la más cercana al estilo real de su área.</p>
+
+        <h4>Actividad 2 &middot; Biblioteca de prompts reutilizables</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Hoja compartida con columnas categoría, prompt con marcadores, modelo recomendado, autor y fecha. Categorías iniciales: oficios y comunicados oficiales; respuestas a solicitudes ciudadanas; actas y minutas de reunión; convocatorias y difusión de programas juveniles; resúmenes ejecutivos internos. Meta: 10 prompts documentados (2 por categoría) antes del cierre.</p>
+
+        <div class="callout callout--danger">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 2 20h20L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p>Ningún prompt incluye datos reales identificables de niñas, niños o adolescentes en el campo "contexto". Ningún documento generado por IA se firma sin revisión humana de nombres, cifras y fechas.</p>
+        </div>
+
+        <h4>Materiales</h4>
+        <div class="tag-list">
+          <span class="tag-pill">Documento real de tarea (o caso de respaldo)</span>
+          <span class="tag-pill">Plantilla RCTF</span>
+          <span class="tag-pill">Hoja de cálculo compartida con permisos de edición</span>
+        </div>
+
+        <h4>Rúbrica de la clase</h4>
+        <div class="rubric-item">
+          <span class="crit">Estructura del prompt</span>
+          <span class="rubric-flow"><span class="from">RCTF incompleto</span><span class="arrow">&rarr;</span><span class="to">RCTF completo y ajustado al modelo</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Calidad del documento resultante</span>
+          <span class="rubric-flow"><span class="from">Requiere reescritura</span><span class="arrow">&rarr;</span><span class="to">Listo para firma sin cambios de fondo</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Aporte a la biblioteca compartida</span>
+          <span class="rubric-flow"><span class="from">Ningún prompt documentado</span><span class="arrow">&rarr;</span><span class="to">Más de un prompt, en más de una categoría</span></span>
+        </div>
+
+        <h4>Notas para el facilitador</h4>
+        <p class="facilitator-note">Tener 3 casos de respaldo listos. Vigilar que nadie copie párrafos completos de un expediente real con nombres de menores en el campo de contexto: es el primer punto de fuga de datos del programa. Designar a alguien del área como responsable de mantener la biblioteca después del curso.</p>
+      </div>
+    </details>
+
+    <!-- CLASE 3 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num">03</span>
+        <span class="class-summary-text">
+          <span class="t">Selección especializada de modelos e investigación profunda</span>
+          <span class="m">Perplexity &middot; Claude &middot; Gemini Pro &middot; Eje 2</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante compara al menos dos modelos en una misma tarea de investigación usando cinco criterios objetivos, y produce un párrafo de diagnóstico social con al menos dos fuentes primarias verificadas de forma cruzada.</p>
+
+        <h4>Carta minuto a minuto</h4>
+        <ul class="timeline">
+          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Se muestra una cifra "citada" por un modelo en una respuesta previa y se pregunta cómo comprobarla.</span></li>
+          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Diferencia entre modelo conversacional general, motor de investigación con citación (Perplexity) y modelo de razonamiento extendido; cuándo usar cada uno.</span></li>
+          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">Misma pregunta de investigación a los tres motores, cuadro de benchmarking llenado en vivo.</span></li>
+          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
+          <li><span class="time">01:25&ndash;02:15</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Benchmarking entre modelos.</span></li>
+          <li><span class="time">02:15&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Búsqueda asistida de diagnóstico social con verificación cruzada.</span></li>
+          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Autoevaluación y tarea: identificar un formulario o reporte de su área que reciba datos ciudadanos, para la Clase 5.</span></li>
+        </ul>
+
+        <h4>Actividad 1 &middot; Benchmarking entre modelos (50 min)</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Sobre un mismo tema (por ejemplo, empleabilidad y primer empleo juvenil en Guerrero), cada participante hace la misma pregunta a dos motores y llena un cuadro con 5 criterios: cita fuentes explícitas y verificables; actualidad de la información; profundidad del análisis (no solo lista datos); presencia de generalización sin evidencia; tiempo y facilidad de uso.</p>
+
+        <h4>Actividad 2 &middot; Diagnóstico social con fuentes citadas (35 min)</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Usando Perplexity (o Claude / Gemini en modo investigación), cada participante redacta un párrafo de diagnóstico sobre el tema de su dirección aplicando el protocolo: pedir que cite explícitamente cada fuente (INEGI, CONEVAL, IMJUVE, Secretaría del Trabajo, etc.), abrir al menos 2 fuentes de forma independiente y confirmar el dato, y marcar y descartar cualquier cifra no verificable en fuente primaria.</p>
+
+        <h4>Materiales</h4>
+        <div class="tag-list">
+          <span class="tag-pill">Tema de diagnóstico social de tarea (o de respaldo)</span>
+          <span class="tag-pill">Formato del cuadro de benchmarking</span>
+          <span class="tag-pill">Acceso a los tres motores con investigación activada</span>
+        </div>
+
+        <h4>Rúbrica de la clase</h4>
+        <div class="rubric-item">
+          <span class="crit">Comparación entre modelos</span>
+          <span class="rubric-flow"><span class="from">Un solo motor</span><span class="arrow">&rarr;</span><span class="to">Prueba un tercero por iniciativa propia</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Verificación de fuentes</span>
+          <span class="rubric-flow"><span class="from">Ninguna verificación</span><span class="arrow">&rarr;</span><span class="to">Descarta explícitamente una cifra no verificable</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Calidad del párrafo de diagnóstico</span>
+          <span class="rubric-flow"><span class="from">Copia sin editar</span><span class="arrow">&rarr;</span><span class="to">Incluye una limitación o sesgo detectado en la fuente</span></span>
+        </div>
+
+        <h4>Notas para el facilitador</h4>
+        <p class="facilitator-note">Elegir 2&ndash;3 temas de respaldo con datos públicos reales de antemano. Perplexity y los modos de investigación pueden tardar 30&ndash;60 segundos por consulta: avisar al grupo. Cerrar subrayando que este protocolo de verificación es el mismo que se audita en la Clase 4.</p>
+      </div>
+    </details>
+
+    <!-- CLASE 4 -->
+    <details class="class-card">
+      <summary>
+        <span class="class-num">04</span>
+        <span class="class-summary-text">
+          <span class="t">Ética pública, ciberseguridad y manejo de riesgos</span>
+          <span class="m">Checklists de auditoría &middot; Eje 3</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="class-body">
+        <p class="obj"><b>Objetivo de aprendizaje:</b> cada participante identifica al menos 3 tipos de error en un texto generado por IA usando un checklist de auditoría, y clasifica correctamente los datos de un caso real de su área según el nivel de resguardo del marco normativo.</p>
+
+        <h4>Carta minuto a minuto</h4>
+        <ul class="timeline">
+          <li><span class="time">00:00&ndash;00:15</span><span class="blk">Apertura</span><span class="desc">Caso real y público de una alucinación de IA con consecuencia institucional.</span></li>
+          <li><span class="time">00:15&ndash;00:45</span><span class="blk">Marco conceptual</span><span class="desc">Tipos de alucinación (cifra inventada, cita inexistente, fecha incorrecta, generalización sin evidencia); marco normativo aplicable a datos de niñez.</span></li>
+          <li><span class="time">00:45&ndash;01:10</span><span class="blk">Demostración guiada</span><span class="desc">El facilitador audita en vivo un texto con 4 errores intencionales.</span></li>
+          <li><span class="time">01:10&ndash;01:25</span><span class="blk">Receso</span></li>
+          <li><span class="time">01:25&ndash;02:10</span><span class="blk">Taller &middot; Actividad 1</span><span class="desc">Auditoría crítica de alucinaciones, en parejas.</span></li>
+          <li><span class="time">02:10&ndash;02:50</span><span class="blk">Taller &middot; Actividad 2</span><span class="desc">Aplicación del protocolo de resguardo de datos a un caso real del propio escritorio.</span></li>
+          <li><span class="time">02:50&ndash;03:00</span><span class="blk">Cierre</span><span class="desc">Entrega del protocolo aplicado; cierre de Mes 1.</span></li>
+        </ul>
+
+        <h4>Actividad 1 &middot; Auditoría crítica de alucinaciones (45 min)</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">En parejas, revisan un texto generado por IA (con errores insertados a propósito) con este checklist: ¿la fuente citada existe y dice lo que el texto afirma? ¿La cifra es verificable en fuente primaria? ¿El texto generaliza sin evidencia? ¿Hay fechas o nombres inconsistentes entre sí? ¿El tono es apropiado para una comunicación oficial? Meta: encontrar al menos 3 de los 4 errores insertados.</p>
+
+        <h4>Actividad 2 &middot; Protocolo de resguardo de datos (40 min)</h4>
+        <p style="color:var(--ink-soft);font-size:0.92rem;">Cada participante toma un caso real de su escritorio y aplica seis pasos: clasificar cada dato (público, confidencial, sensible); verificar si algún dato identifica directa o indirectamente a un menor; decidir si el caso puede procesarse en una IA en la nube o requiere anonimización previa; marcar qué campos deben enmascararse si aplica; registrar el caso en la bitácora de tratamiento del área; marcar para consulta jurídica ante cualquier duda.</p>
+
+        <h4>Materiales</h4>
+        <div class="tag-list">
+          <span class="tag-pill">2 textos con errores insertados (preparados con anticipación)</span>
+          <span class="tag-pill">Checklist de auditoría</span>
+          <span class="tag-pill">Formato de protocolo y bitácora de tratamiento</span>
+          <span class="tag-pill">Resumen de una página del marco normativo</span>
+        </div>
+
+        <h4>Rúbrica de la clase</h4>
+        <div class="rubric-item">
+          <span class="crit">Detección de alucinaciones</span>
+          <span class="rubric-flow"><span class="from">0&ndash;1 errores</span><span class="arrow">&rarr;</span><span class="to">Los 4 errores, con explicación del riesgo en cada uno</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Clasificación de datos del caso propio</span>
+          <span class="rubric-flow"><span class="from">No distingue dato sensible</span><span class="arrow">&rarr;</span><span class="to">Identifica un dato indirecto no señalado por el facilitador</span></span>
+        </div>
+        <div class="rubric-item">
+          <span class="crit">Aplicación del protocolo completo</span>
+          <span class="rubric-flow"><span class="from">Menos de 3 pasos</span><span class="arrow">&rarr;</span><span class="to">Los 6 pasos, más un caso límite marcado para consulta jurídica</span></span>
+        </div>
+
+        <div class="callout callout--danger">
+          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 2 20h20L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p>Si un caso real de un participante contiene datos de un menor, trabajar solo con descripción verbal: el dato real no se proyecta ni se comparte en pantalla.</p>
+        </div>
+
+        <h4>Notas para el facilitador</h4>
+        <p class="facilitator-note">Preparar los textos con errores con 48 horas de anticipación, idealmente revisados por un segundo facilitador. Esta clase cierra el Mes 1: recoger retroalimentación del grupo antes de entrar a Mes 2.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="section anchor-target" id="mes2-cartas">
+    <div class="section-head">
+      <span class="eyebrow">Mes 2 &middot; Datos y protección de la niñez</span>
+      <h2>Clases 05 a 08</h2>
+      <p>Carta descriptiva pendiente de desarrollo al mismo nivel de detalle que el Mes 1. Tema, herramientas y producto ya definidos en el cronograma general.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">05 &middot; Calidad de datos y fuentes abiertas gubernamentales</span>
+        <span class="m">Colab, Python / Pandas, CSV / Excel &middot; producto: análisis exploratorio de solicitudes comunitarias</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">06 &middot; Consultas en lenguaje natural a bases de datos</span>
+        <span class="m">Pandas SQL, ChatGPT, Matplotlib &middot; producto: consultas priorizadas + gráficos estadísticos</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">07 &middot; Anonimización y protección de datos personales (PII)</span>
+        <span class="m">Regex, Faker, spaCy, Presidio &middot; producto: pipeline de anonimización de expedientes de menores</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">08 &middot; Informes ejecutivos y diagnósticos sociales</span>
+        <span class="m">Perplexity, ChatGPT, Gemini Pro &middot; producto: informe ejecutivo de gestión de 1 página</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section anchor-target" id="mes3-cartas">
+    <div class="section-head">
+      <span class="eyebrow">Mes 3 &middot; Automatización operativa</span>
+      <h2>Clases 09 a 12</h2>
+      <p>Carta descriptiva pendiente de desarrollo. La Clase 12 cierra el programa con la sustentación del proyecto integrador.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">09 &middot; Automatización No-Code / Low-Code y lógica de flujos</span>
+        <span class="m">Make, Power Automate, Zapier &middot; producto: flujo No-Code de recepción de solicitudes</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">10 &middot; Integración institucional, alertas y correos automáticos</span>
+        <span class="m">Power Automate / Make + Outlook / Gmail, Teams, Sheets &middot; producto: reportes automáticos y alertas prioritarias</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">11 &middot; Presentaciones ejecutivas visuales de alto impacto</span>
+        <span class="m">Gamma, Canva IA, python-pptx &middot; producto: deck generado + script confidencial en python-pptx</span>
+      </div>
+      <div class="pending-card">
+        <span class="pending-flag">Pendiente</span>
+        <span class="t">12 &middot; Proyecto integrador y certificación</span>
+        <span class="m">Ecosistema completo &middot; producto: sustentación del proyecto integrador por área</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TAB 3: EVALUACIÓN Y NORMATIVA ================= -->
+<section class="tab-panel" id="panel-evaluacion" role="tabpanel" hidden>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Rúbrica transversal de evaluación</h2>
+      <p>Base común de las 12 clases. Cada carta descriptiva instancia 3 o 4 de estas cinco dimensiones con un producto concreto; la Clase 12 las pondera todas para la certificación.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dimensión</th><th>1 &middot; Incipiente</th><th>2 &middot; En desarrollo</th><th>3 &middot; Logrado</th><th>4 &middot; Destacado</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="strong">Comprensión conceptual</td>
+            <td>No distingue el concepto de la clase de un uso genérico de IA.</td>
+            <td>Repite la definición pero no la aplica a su propio trabajo.</td>
+            <td>Explica el concepto con un ejemplo de su propia área.</td>
+            <td>Lo explica y anticipa cuándo NO conviene aplicarlo.</td>
+          </tr>
+          <tr>
+            <td class="strong">Aplicación con herramientas de IA</td>
+            <td>Necesita guía paso a paso para reproducir la demostración.</td>
+            <td>Reproduce el ejercicio con apoyo puntual del facilitador.</td>
+            <td>Completa el ejercicio de forma autónoma en el tiempo previsto.</td>
+            <td>Lo adapta a un segundo caso propio, sin pedirlo.</td>
+          </tr>
+          <tr>
+            <td class="strong">Calidad del entregable</td>
+            <td>Incompleto o con errores que impiden su uso.</td>
+            <td>Completo, con imprecisiones menores.</td>
+            <td>Correcto, claro y utilizable en el trabajo real.</td>
+            <td>Listo para reutilizarse como plantilla del área.</td>
+          </tr>
+          <tr>
+            <td class="strong">Juicio ético y protección de datos</td>
+            <td>Introduce datos identificables de menores u otros datos sensibles sin advertirlo.</td>
+            <td>Identifica el riesgo solo cuando se le señala.</td>
+            <td>Identifica y mitiga el riesgo por iniciativa propia.</td>
+            <td>Señala también riesgos en el trabajo de otros compañeros.</td>
+          </tr>
+          <tr>
+            <td class="strong">Autonomía y transferencia</td>
+            <td>El ejercicio queda aislado de su trabajo cotidiano.</td>
+            <td>Ve la utilidad pero no ha planeado cuándo usarlo.</td>
+            <td>Define una tarea concreta de su semana donde lo aplicará.</td>
+            <td>Ya lo aplicó a un caso real antes de la siguiente sesión.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px;font-size:0.85rem;color:var(--ink-faint);font-family:var(--font-mono);">Escala sugerida de conversión: Incipiente = 60 &middot; En desarrollo = 75 &middot; Logrado = 90 &middot; Destacado = 100 (sobre 100 puntos por dimensión evaluada).</p>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Certificación final</h2>
+    </div>
+    <ul class="check-list">
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Asistencia mínima del 80% (10 de 12 clases).</span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Proyecto integrador presentado y sustentado en la Clase 12, combinando al menos 3 de los 4 ejes.</span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Calificación ponderada mínima de 70/100 (rúbrica transversal 40% + rúbrica del proyecto integrador 60%).</span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin incidentes de manejo de datos durante el curso.</span></li>
+    </ul>
+
+    <div class="tier-row" style="margin-top:22px;">
+      <div class="tier-card t1"><span class="range">70&ndash;79</span><div class="lvl">Constancia de participación</div></div>
+      <div class="tier-card t2"><span class="range">80&ndash;89</span><div class="lvl">Constancia de competencia intermedia</div></div>
+      <div class="tier-card t3"><span class="range">90&ndash;100</span><div class="lvl">Constancia de competencia destacada</div></div>
+    </div>
+    <p style="margin-top:12px;font-size:0.88rem;color:var(--ink-soft);">Todas las constancias tienen valor curricular institucional en el expediente de SEJUVE.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Marco normativo de referencia</h2>
+      <p>Orienta el Eje 3 del programa (Clases 4 y 7). No sustituye una opinión del área jurídica de la Secretaría.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>LGPDPPSO</h3>
+        <p>Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados: ley marco que rige a toda dependencia estatal, SEJUVE incluida, en el tratamiento de datos personales.</p>
+      </div>
+      <div class="card">
+        <h3>LGDNNA</h3>
+        <p>Ley General de los Derechos de Niñas, Niños y Adolescentes: fija el principio de interés superior de la niñez y exige medidas reforzadas de protección cuando el dato identifica a una persona menor de edad.</p>
+      </div>
+    </div>
+    <div class="callout callout--warn" style="margin-top:16px;">
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+      <p><b>Autoridad garante vigente:</b> el Instituto Nacional de Transparencia (INAI) fue extinguido en 2025; sus funciones fueron reasignadas a nivel federal a la Secretaría Anticorrupción y Buen Gobierno. Se recomienda confirmar con el área jurídica de SEJUVE el nombre y contacto vigentes del órgano garante estatal antes de publicar este marco como protocolo oficial.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Categorías de dato a vigilar</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Categoría</th><th>Ejemplos en SEJUVE</th><th>Nivel de resguardo</th></tr></thead>
+        <tbody>
+          <tr><td class="strong">Identificación directa</td><td>Nombre completo, CURP, fecha de nacimiento</td><td><span class="pill" data-level="confidencial">Confidencial</span></td></tr>
+          <tr><td class="strong">Identificación indirecta</td><td>Dirección, escuela, nombre de madre / padre / tutor</td><td><span class="pill" data-level="confidencial">Confidencial</span></td></tr>
+          <tr><td class="strong">Datos sensibles</td><td>Condición de salud, situación familiar o de tutela, fotografía o video</td><td><span class="pill" data-level="sensible">Sensible &middot; máximo resguardo</span></td></tr>
+          <tr><td class="strong">Dato agregado o anonimizado</td><td>Conteos por municipio, rangos de edad, porcentajes</td><td><span class="pill" data-level="libre">Uso libre en IA en la nube</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout--danger" style="margin-top:18px;">
+      <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <p><b>Regla de oro del programa:</b> ningún dato de identificación directa o indirecta de una persona menor de edad se sube a una herramienta de IA en la nube sin haber pasado antes por el pipeline de anonimización de la Clase 7.</p>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    <span>Guía del facilitador &middot; Secretaría de la Juventud y la Niñez del Estado de Guerrero</span>
+    <span>Mes 1 desarrollado a detalle &middot; Mes 2&ndash;3 pendientes de carta descriptiva</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+
+  function activate(target, save){
+    tabs.forEach(function(b){
+      var on = b.dataset.target === target;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function(p){
+      var show = (p.id === target);
+      p.hidden = !show;
+      p.classList.remove('enter');
+      if(show){ void p.offsetWidth; p.classList.add('enter'); }
+    });
+    if(save){
+      try{ localStorage.setItem('sejuve-ruta-ia-tab', target); }catch(e){}
+    }
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){ activate(btn.dataset.target, true); });
+  });
+
+  var saved = null;
+  try{ saved = localStorage.getItem('sejuve-ruta-ia-tab'); }catch(e){}
+  if(saved && document.getElementById(saved)){ activate(saved, false); }
+})();
+</script>
+</body>
+</html>
