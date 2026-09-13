@@ -36,8 +36,9 @@
     --safe:#2E7D5B;
     --safe-strong:#1F5C42;
     --safe-tint:#E3F1EA;
-    --shadow: 0 1px 2px rgba(26,26,26,0.04), 0 20px 40px -24px rgba(26,26,26,0.18);
+    --shadow: 0 2px 6px rgba(26,26,26,0.05), 0 28px 56px -26px rgba(26,26,26,0.22);
     --radius-card:20px;
+    --radius-lg:28px;
     --font-display:'Archivo', -apple-system, 'Segoe UI', sans-serif;
     --font-body:'Archivo', -apple-system, 'Segoe UI', sans-serif;
     --font-mono:'IBM Plex Mono', 'Courier New', monospace;
@@ -119,13 +120,21 @@
   .tab-panel.enter{animation:panelIn .32s cubic-bezier(.16,1,.3,1);}
 
   /* in-page quick nav (Cronograma y clases) */
-  .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px;}
+  .quicknav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px;}
   .quicknav a{
+    display:inline-flex;align-items:center;gap:8px;
     font-family:var(--font-mono);font-size:0.76rem;text-decoration:none;
     color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);
-    border-radius:999px;padding:6px 13px;transition:color .15s ease, border-color .15s ease, background-color .15s ease;
+    border-radius:999px;padding:6px 8px 6px 14px;transition:color .15s ease, border-color .15s ease, background-color .15s ease;
   }
+  .quicknav a .go{
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+    width:20px;height:20px;border-radius:50%;background:var(--surface-2);color:var(--ink-faint);
+    transition:background-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .quicknav a .go svg{width:11px;height:11px;}
   .quicknav a:hover{color:var(--primary-strong);border-color:var(--primary);background:var(--primary-tint);}
+  .quicknav a:hover .go{background:var(--primary);color:var(--on-primary);transform:translateY(2px);}
   @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth;} }
   .anchor-target{scroll-margin-top:118px;}
 
@@ -142,12 +151,25 @@
   .lede{font-size:1.15rem;color:var(--ink-soft);max-width:68ch;font-weight:500;}
 
   /* hero de apertura (Tab Programa) */
-  .hero-block{padding-bottom:0;}
+  .hero-block{padding-bottom:0;position:relative;}
   .hero-block .eyebrow{margin-bottom:2px;}
   .hero-block h1{
     font-size:clamp(2.1rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.03em;
     line-height:1.04;max-width:16ch;margin:10px 0 16px;
   }
+  .hero-deco{position:absolute;pointer-events:none;opacity:0.55;}
+  .hero-deco.d1{width:56px;height:56px;border-radius:14px;background:var(--primary-tint);border:1.5px solid var(--primary);top:0;right:64px;transform:rotate(16deg);}
+  .hero-deco.d2{width:26px;height:26px;border-radius:8px;background:var(--rosa);top:58px;right:150px;transform:rotate(-14deg);}
+  .hero-deco.d3{width:14px;height:14px;border-radius:50%;background:var(--primary);top:10px;right:20px;}
+  @media (max-width:860px){ .hero-deco{display:none;} }
+
+  .icon-badge{
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--primary-tint);color:var(--primary);
+  }
+  .icon-badge svg{width:22px;height:22px;}
+  .icon-badge.on-primary{background:var(--primary);color:var(--on-primary);}
 
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
   .chip{
@@ -320,6 +342,18 @@
   .callout--danger{border-left-color:var(--berry);background:var(--berry-tint);}
   .callout--danger .ic{color:var(--berry-strong);}
 
+  .spotlight{
+    background:var(--primary);border-radius:var(--radius-lg);
+    padding:28px 30px;display:flex;gap:18px;align-items:flex-start;
+    box-shadow:0 24px 48px -20px rgba(74,0,31,0.45);
+  }
+  .spotlight-eyebrow{
+    display:block;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--rosa);font-weight:600;margin-bottom:8px;
+  }
+  .spotlight p{color:#fff;font-size:1.05rem;font-weight:500;line-height:1.5;}
+  @media (max-width:560px){ .spotlight{flex-direction:column;padding:24px;} }
+
   .facilitator-note{
     background:var(--surface-2);border:1px dashed var(--line);border-radius:10px;
     padding:14px 16px;font-size:0.88rem;color:var(--ink-soft);
@@ -389,6 +423,9 @@
 <section class="tab-panel" id="panel-programa" role="tabpanel">
 
   <div class="section hero-block">
+    <span class="hero-deco d1" aria-hidden="true"></span>
+    <span class="hero-deco d2" aria-hidden="true"></span>
+    <span class="hero-deco d3" aria-hidden="true"></span>
     <span class="eyebrow">Guía del facilitador</span>
     <h1>De uso básico a uso responsable de IA generativa</h1>
     <p class="lede">Un recorrido de <b>3 meses</b> y <b>12 sesiones semanales</b> para llevar a todo el personal operativo y de mando medio de la Secretaría de la Juventud y la Niñez de Guerrero a un uso intermedio, aplicado y responsable de IA en sus funciones cotidianas.</p>
@@ -427,18 +464,22 @@
     </div>
     <div class="grid grid-4">
       <div class="card">
+        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         <h3>Caso real de SEJUVE en cada clase</h3>
         <p>Ningún ejercicio usa datos genéricos cuando puede usar un proceso real del área: solicitudes ciudadanas, convocatorias juveniles, expedientes de atención, reportes a Bienestar estatal.</p>
       </div>
       <div class="card">
+        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
         <h3>La niñez como criterio de diseño</h3>
         <p>El resguardo de datos de menores de edad se introduce desde la Clase 1 y se audita explícitamente en la Clase 4 y en el proyecto integrador.</p>
       </div>
       <div class="card">
+        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2 8.5 5-8.5 5-8.5-5L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 12 8.5 5 8.5-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 17 8.5 5 8.5-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
         <h3>Herramienta gratuita o institucional</h3>
         <p>Todo el programa opera con capas gratuitas o licenciamiento ya disponible en el gobierno estatal.</p>
       </div>
       <div class="card">
+        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="7" y="13" width="3" height="5" stroke="currentColor" stroke-width="1.6"/><rect x="12" y="9" width="3" height="9" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="5" width="3" height="13" stroke="currentColor" stroke-width="1.6"/></svg></span>
         <h3>Evaluación formativa, no punitiva</h3>
         <p>Cada clase cierra con una rúbrica de 4 niveles pensada para dar retroalimentación, no para descalificar personal con menor alfabetización digital previa.</p>
       </div>
@@ -452,22 +493,30 @@
     </div>
     <div class="grid grid-2">
       <div class="card">
-        <div class="card-top"><span class="badge-num">1</span><h3>Redacción y comunicación institucional asistida</h3></div>
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+        <span class="eyebrow" style="margin-top:12px;">Eje 1</span>
+        <h3>Redacción y comunicación institucional asistida</h3>
         <p>Oficios, respuestas ciudadanas, actas, convocatorias e informes redactados con apoyo de IA y validados antes de firma.</p>
         <span class="tag">Clases 01, 02, 08</span>
       </div>
       <div class="card">
-        <div class="card-top"><span class="badge-num">2</span><h3>Análisis de necesidades juveniles con datos</h3></div>
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <span class="eyebrow" style="margin-top:12px;">Eje 2</span>
+        <h3>Análisis de necesidades juveniles con datos</h3>
         <p>Lectura de bases comunitarias, consultas en lenguaje natural y diagnósticos sociales con fuentes citadas.</p>
         <span class="tag">Clases 03, 05, 06, 08</span>
       </div>
       <div class="card">
-        <div class="card-top"><span class="badge-num">3</span><h3>Protección y anonimización de datos de niñez</h3></div>
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.5 12 2.4 2.4L15.5 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="eyebrow" style="margin-top:12px;">Eje 3</span>
+        <h3>Protección y anonimización de datos de niñez</h3>
         <p>Clasificación de datos sensibles, enmascaramiento de identificadores y pipelines de anonimización para expedientes de personas menores de edad.</p>
         <span class="tag">Clases 04, 07</span>
       </div>
       <div class="card">
-        <div class="card-top"><span class="badge-num">4</span><h3>Automatización operativa No-Code</h3></div>
+        <span class="icon-badge on-primary" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+        <span class="eyebrow" style="margin-top:12px;">Eje 4</span>
+        <h3>Automatización operativa No-Code</h3>
         <p>Mapeo de flujos, alertas automáticas y presentaciones ejecutivas generadas sin programar.</p>
         <span class="tag">Clases 09, 10, 11</span>
       </div>
@@ -528,10 +577,10 @@
 <section class="tab-panel" id="panel-cronograma" role="tabpanel" hidden>
 
   <nav class="quicknav" aria-label="Navegación dentro de esta pestaña">
-    <a href="#cronograma-tabla">Cronograma completo</a>
-    <a href="#mes1-cartas">Cartas Mes 1</a>
-    <a href="#mes2-cartas">Mes 2</a>
-    <a href="#mes3-cartas">Mes 3</a>
+    <a href="#cronograma-tabla">Cronograma completo<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#mes1-cartas">Cartas Mes 1<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#mes2-cartas">Mes 2<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <a href="#mes3-cartas">Mes 3<span class="go"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   </nav>
 
   <div class="section anchor-target" id="cronograma-tabla">
@@ -987,9 +1036,12 @@ Formato: Máximo [N] párrafos, tono institucional formal, cierre con la fórmul
       </table>
     </div>
 
-    <div class="callout callout--danger" style="margin-top:18px;">
-      <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-      <p><b>Regla de oro del programa:</b> ningún dato de identificación directa o indirecta de una persona menor de edad se sube a una herramienta de IA en la nube sin haber pasado antes por el pipeline de anonimización de la Clase 7.</p>
+    <div class="spotlight" style="margin-top:18px;">
+      <span class="icon-badge on-primary" aria-hidden="true" style="background:rgba(255,255,255,0.16);color:#fff;"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8.5-8 9-4.6-.5-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <div>
+        <span class="spotlight-eyebrow">Regla de oro del programa</span>
+        <p>Ningún dato de identificación directa o indirecta de una persona menor de edad se sube a una herramienta de IA en la nube sin haber pasado antes por el pipeline de anonimización de la Clase 7.</p>
+      </div>
     </div>
   </div>
 
